@@ -37,10 +37,14 @@ public:
     void addPoint(double x, double y); /**< Funkcja dodająca wartości  */
     void clearData(); /**< Usuwanie wartości z diagramu */
     void plot(); /**< Rysowanie wykresu */
+
 private slots:
     void on_pushButtonAdd_clicked();
 
     void on_pushButtonClear_clicked();
+
+    void receiveData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
+
 
 private:
     Ui::Diagram *ui; /**< Wskaźnik na interfejs użytkownika (UI) */

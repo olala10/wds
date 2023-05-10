@@ -52,8 +52,9 @@ public:
 
 
 signals:
-    void openDevice();
-    void closeDevice();
+    void openDevice();  /**< Sygnał otwierający komunikację z urządzeniem */
+    void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
+    void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
 
 private slots:
 

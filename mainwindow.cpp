@@ -178,11 +178,15 @@ void MainWindow::on_pushButtonClear_clicked()
 
 void MainWindow::on_pushButtonRead_clicked()
 {
+//    QDateTime currentTime = QDateTime::currentDateTime();
+//    double currentTimeDouble = static_cast<double>(currentTime.toMSecsSinceEpoch()) / 1000.0;
+    double x = 0.0; // zmienić na czas
     QByteArray data = this->device->readAll();
    // ui->textEditData->append(QString(data));
 
     QString strData = QString::fromUtf8(data);
-    QStringList lines = strData.split('\n'); //separator nowej linii
+    QStringList lines = strData.split('\n'); /**< separator nowej linii */
+    double y =5;
 
     for(const QString& line : lines)
     {
@@ -195,11 +199,13 @@ void MainWindow::on_pushButtonRead_clicked()
      //   dataVector.push_back(lineData);
 
     }
-
+    qDebug()<<x;
+    qDebug()<<y;
+    qDebug()<<strData.toDouble();
+    emit sendData(x, y); /**< Emisja sygnału do wykresu */
     dataVector.append(strData);
     ui->textEditData->append(strData);
-
-    QTimer::singleShot(100, this, SLOT(on_pushButtonRead_clicked())); // odczyt co stały odcinek czasu
+       QTimer::singleShot(100, this, SLOT(on_pushButtonRead_clicked())); /**< odczyt co stały odcinek czasu*/
 
 }
 
@@ -213,7 +219,7 @@ void MainWindow::on_pushButtonRead_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     newWindow->show();// Wyświetlenie nowego okna
-    diagram->show();
+    diagram->show(); //Wyświetlenie okna wykresu
 
 }
 
