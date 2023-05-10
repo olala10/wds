@@ -1,5 +1,6 @@
 #include "newwindow.h"
 #include "ui_form.h".h"
+#include "mainwindow.h"
 
 
 /*!
@@ -23,3 +24,12 @@ NewWindow::~NewWindow()
 {
     delete ui;
 }
+
+
+void NewWindow::on_pushButtonDiagram_clicked()
+{
+//    for(const QString& str : dataVector){
+//        floatData.push_back(str.toFloat());
+//    }
+}
+

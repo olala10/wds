@@ -6,12 +6,24 @@
 #include <QThread>
 #include <QIODevice>
 #include <QTextEdit>
+#include <QDebug>
+#include <QList>
+#include <QIODevice>
+#include <QtSerialPort/QSerialPortInfo>
+#include <QDateTime>
+//#include <QtCharts>
+//#include <QChartView>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
 #include "newwindow.h"
+#include "diagram.h"
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
+#ifndef DATAVECTOR_H
+#define DATAVECTOR_H
 /**
  * @brief The MainWindow class
  *
@@ -37,6 +49,11 @@ public:
      */
 
     ~MainWindow();
+
+
+signals:
+    void openDevice();
+    void closeDevice();
 
 private slots:
 
@@ -74,8 +91,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;/**< Wskaźnik na interfejs użytkownika (UI) */
+    QChartView *QChartView;
+    void setupChart(){}; // prywatna metoda do ustawienia wykresu
     void addToLogs(QString message);/**< Metoda do dodawania wiadomości do logów
- * @param message Wiadomość do dodania do logów
+                                    * @param message Wiadomość do dodania do logów
                                     */
 
     void addToRead(QString message);/**< Metoda do dodawania wiadomości do odczytu
@@ -85,8 +104,12 @@ private:
     QSerialPort *device;/**< Wskaźnik na obiekt klasy QSerialPort do obsługi portu szeregowego */
     QThread* thread;/**< Wskaźnik na wątek do obsługi portu szeregowego */
     NewWindow *newWindow;/**< Wskaźnik na nowe okno */
-
+    Diagram *diagram;
+    QVector<QString> dataVector; /** < Wskaźnik na QWektor do odczytu danych z urządzenia */
+    std::vector <float> lineData; /**< Wektor do przechowywania linii odczytanych danych jako typ float */
+//    std::vector <float> readingLineData; /**< Wektor do przechowywania odczytanych danych typu float */
 //    DataReader* dataReader;
 
 };
+#endif // DATAVECTOR_H
 #endif // MAINWINDOW_H

@@ -2,6 +2,14 @@
 #define NEWWINDOW_H
 
 #include<QMainWindow>
+#include <QTableView>
+#include <QTableWidget>
+#include <QStandardItemModel>
+#include <QGraphicsView>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCore/QVector>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class NewWindow; }
@@ -30,8 +38,12 @@ public:
         */
     ~NewWindow();
 
+private slots:
+    void on_pushButtonDiagram_clicked();
+
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
+  std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
 
 };
 

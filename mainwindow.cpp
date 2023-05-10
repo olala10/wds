@@ -1,11 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "newwindow.h"
+#include "diagram.h"
 #include <QDebug>
 #include <QList>
 #include <QtSerialPort/QSerialPortInfo>
+#include <QChart>
+#include <QChartView>
 #include <QThread>
-
+#include <QVector>
+#include <QTimer>
 #include <QDateTime>
 
 /*!
@@ -21,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->device = new QSerialPort(this);
     this->thread = new QThread;
     this->newWindow = new NewWindow;
+    this->diagram = new Diagram;
+
+    setupChart(); // wywołanie metody do ustawienia wykresu
 }
 /*!
  * \brief Destruktor klasy MainWindow.
@@ -166,13 +173,33 @@ void MainWindow::on_pushButtonClear_clicked()
  *
  * Metoda obsługująca kliknięcie przycisku "on_pushButtonRead_clicked()" w oknie głównym aplikacji.
  * Odczytuje dane z urządzenia szeregowego i dodaje je do pola tekstowego "ui->textEditData".
+ * Dane są także dodawane do wektora danych dataVector
  */
 
 void MainWindow::on_pushButtonRead_clicked()
 {
-    QThread *thread();
     QByteArray data = this->device->readAll();
-    ui->textEditData->append(QString(data));
+   // ui->textEditData->append(QString(data));
+
+    QString strData = QString::fromUtf8(data);
+    QStringList lines = strData.split('\n'); //separator nowej linii
+
+    for(const QString& line : lines)
+    {
+        QStringList fields = line.split('.');
+
+        for(const QString& field : fields)
+        {
+            lineData.push_back(field.toFloat());
+        }
+     //   dataVector.push_back(lineData);
+
+    }
+
+    dataVector.append(strData);
+    ui->textEditData->append(strData);
+
+    QTimer::singleShot(100, this, SLOT(on_pushButtonRead_clicked())); // odczyt co stały odcinek czasu
 
 }
 
@@ -186,5 +213,7 @@ void MainWindow::on_pushButtonRead_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     newWindow->show();// Wyświetlenie nowego okna
+    diagram->show();
+
 }
 

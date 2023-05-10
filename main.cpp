@@ -10,6 +10,7 @@
 #include "newwindow.h"  ///< Dołączenie pliku nagłówkowego klasy NewWindow.
 #include <QApplication>///< Dołączenie pliku nagłówkowego klasy QApplication.
 
+
 /**
  * @brief Punkt wejścia aplikacji.
  *
@@ -24,4 +25,5 @@ int main(int argc, char *argv[])
     MainWindow w;///< Utworzenie obiektu klasy MainWindow.
     w.show();///< Wywołanie metody show() na obiekcie MainWindow.
     return a.exec();///< Uruchomienie pętli głównej aplikacji.
+
 }
