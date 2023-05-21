@@ -55,6 +55,8 @@ signals:
     void openDevice();  /**< Sygnał otwierający komunikację z urządzeniem */
     void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
+    void sendSpaceSensorData(double x, double y); /**< Sygnał do emisji danych z czujnika odległości */
+
 
 private slots:
 
@@ -84,11 +86,15 @@ private slots:
          * @brief Slot dla przycisku odczytu
          */
 
-    void on_pushButtonRead_clicked();
+    void on_pushButtonRead_toggled(bool Checked);
 
 
 
     void on_pushButton_clicked();
+
+    void on_pushButtonClearMonitor_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;/**< Wskaźnik na interfejs użytkownika (UI) */
@@ -108,8 +114,12 @@ private:
     Diagram *diagram;
     QVector<QString> dataVector; /** < Wskaźnik na QWektor do odczytu danych z urządzenia */
     std::vector <float> lineData; /**< Wektor do przechowywania linii odczytanych danych jako typ float */
-//    std::vector <float> readingLineData; /**< Wektor do przechowywania odczytanych danych typu float */
-//    DataReader* dataReader;
+    bool  _Start = false;
+    double secTimer = 0; // do odliczania - poprawić to
+    double distance =0 ;
+    double light = 0;
+    QString compass;
+    double temperature = 0;
 
 };
 #endif // DATAVECTOR_H
