@@ -1,6 +1,8 @@
 #include "newwindow.h"
 #include "ui_form.h".h"
 #include "mainwindow.h"
+#include "diagram.h"
+
 
 
 /*!
@@ -28,8 +30,8 @@ NewWindow::~NewWindow()
 
 void NewWindow::on_pushButtonDiagram_clicked()
 {
-//    for(const QString& str : dataVector){
-//        floatData.push_back(str.toFloat());
-//    }
+    chartSpace = new Diagram(this);
+
+    chartSpace->show();
 }
 

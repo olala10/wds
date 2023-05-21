@@ -9,6 +9,8 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 #include <QtCore/QVector>
+#include "diagram.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -44,6 +46,7 @@ private slots:
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
+  Diagram* chartSpace;
 
 };
 

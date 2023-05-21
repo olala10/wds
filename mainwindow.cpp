@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->device = new QSerialPort(this);
     this->thread = new QThread;
     this->newWindow = new NewWindow;
-    this->diagram = new Diagram;
+
 
     setupChart(); // wywołanie metody do ustawienia wykresu
 }
@@ -100,30 +100,31 @@ void MainWindow::on_pushButtonConnect_clicked()
         return;
     }
 
-    QString portName = ui->comboBoxDevices->currentText().split("\t").first(); // Pobranie nazwy portu z comboboxa
+    QString portName = ui->comboBoxDevices->currentText().split("\t").first(); /**< Pobranie nazwy portu z comboboxa */
     // split - dzielenie łańcucha znakowego z comboBoxa, first - nazwa portu
-    this->device->setPortName(portName); // Ustawienie nazwy portu w obiekcie klasy QSerialPort
+    this->device->setPortName(portName); /**< Ustawienie nazwy portu w obiekcie klasy QSerialPort */
 
     if(!device->isOpen()){// Sprawdzenie, czy port jest zamknięty
 
 
     //otwieranie i konfiguracja portu
     if(device->open(QSerialPort::ReadWrite)){
-          this->device->setBaudRate(QSerialPort::Baud115200);// Ustawienie prędkości transmisji na 115200 bps
-          this->device->setDataBits(QSerialPort::Data8); // Ustawienie liczby bitów danych na 8
-          this->device->setParity(QSerialPort::NoParity); // Ustawienie braku bitu parzystości
-          this->device->setStopBits(QSerialPort::OneStop); // Ustawienie jednego bitu stopu
+          this->device->setBaudRate(QSerialPort::Baud115200);/**< Ustawienie prędkości transmisji na 115200 bps dla STM*/
+//          this->device->setBaudRate(QSerialPort::Baud9600);/** Ustawienie prędkości transmisji na 9600 bps dla Arduino */
+          this->device->setDataBits(QSerialPort::Data8); /**< Ustawienie liczby bitów danych na 8 */
+          this->device->setParity(QSerialPort::NoParity); /**< Ustawienie braku bitu parzystości */
+          this->device->setStopBits(QSerialPort::OneStop); /**< Ustawienie jednego bitu stopu */
           this->device->setFlowControl(QSerialPort::NoFlowControl);
 
-        this->addToLogs("Port szeregowy został otwarty"); // Dodanie komunikatu do logów informującego o otwarciu portu szeregowego
+        this->addToLogs("Port szeregowy został otwarty"); /**< Dodanie komunikatu do logów informującego o otwarciu portu szeregowego */
 
     }
     else{
-        this->addToLogs("Port szeregowy nie został otwarty");// Dodanie komunikatu do logów informującego o nieudanym otwarciu portu szeregowego
+        this->addToLogs("Port szeregowy nie został otwarty"); /**< Dodanie komunikatu do logów informującego o nieudanym otwarciu portu szeregowego */
     }
   }
     else{
-        this->addToLogs("Port został już otwarty");// Dodanie komunikatu do logów informującego o już otwartym porcie szeregowym
+        this->addToLogs("Port został już otwarty");/**< Dodanie komunikatu do logów informującego o już otwartym porcie szeregowym */
     }
 }
 
@@ -135,14 +136,15 @@ void MainWindow::on_pushButtonConnect_clicked()
 
 void MainWindow::readFromPort()
 {
-    while(this->device->canReadLine()){// Odczyt danych z portu szeregowego linia po linii
-        QString line = this->device->readLine();// Odczyt jednej linii danych z portu
+    while(this->device->canReadLine()){/**< Odczyt danych z portu szeregowego linia po linii */
+        QString line = this->device->readLine();/**< Odczyt jednej linii danych z portu */
 
-        QString terminator = "\r";// Separator linii
-        int pos = line.lastIndexOf(terminator);// Znalezienie pozycji separatora
+//        QString terminator = "\r";/**< Separator linii */
+        QString terminator = "\n";/**< Separator linii */
+        int pos = line.lastIndexOf(terminator);/**< Znalezienie pozycji separatora */
 
 
-        this->addToLogs(line.left(pos));// Dodanie odczytanej linii do logów
+        this->addToLogs(line.left(pos));/**< Dodanie odczytanej linii do logów */
     }
 }
 
@@ -168,46 +170,77 @@ void MainWindow::on_pushButtonClear_clicked()
     ui->textEditLogs->clear();// Wyczyszczenie okna logów
 }
 
+//void MainWindow::sendSpaceSensorData();
+
 /**
- * @brief Slot obsługujący przycisk "on_pushButtonRead_clicked()"
+ * @brief Slot obsługujący przycisk "on_pushButtonRead_toggled()"
  *
  * Metoda obsługująca kliknięcie przycisku "on_pushButtonRead_clicked()" w oknie głównym aplikacji.
  * Odczytuje dane z urządzenia szeregowego i dodaje je do pola tekstowego "ui->textEditData".
- * Dane są także dodawane do wektora danych dataVector
  */
 
-void MainWindow::on_pushButtonRead_clicked()
+void MainWindow::on_pushButtonRead_toggled(bool Checked)
 {
 //    QDateTime currentTime = QDateTime::currentDateTime();
 //    double currentTimeDouble = static_cast<double>(currentTime.toMSecsSinceEpoch()) / 1000.0;
-    double x = 0.0; // zmienić na czas
-    QByteArray data = this->device->readAll();
+    if (!Checked) { _Start = false;  return; }
+    _Start = true;
+     double x=2;
+
+
+    QByteArray data ;
    // ui->textEditData->append(QString(data));
+    while (_Start) {
+        data = this->device->readAll();
+        int counter=0;
+        if (!data.isEmpty())  {
+            QString strData = QString::fromUtf8(data);
+            if(strData.startsWith("start")){
+            ++secTimer;
+                int startIndex = strData.indexOf('#'); /**< index między od którego zaczynamy odczyt */
+                for (int i = startIndex; i< strData.length(); ++i){
 
-    QString strData = QString::fromUtf8(data);
-    QStringList lines = strData.split('\n'); /**< separator nowej linii */
-    double y =5;
+                    int endIndex = strData.indexOf('#', startIndex + 1);
+                    if (endIndex >= 0){
+                     QString value = strData.mid(startIndex + 1, endIndex - startIndex - 1);
+                   //   qDebug()<<value;
 
-    for(const QString& line : lines)
-    {
-        QStringList fields = line.split('.');
+                      startIndex = strData.indexOf('#', endIndex + 1);
 
-        for(const QString& field : fields)
-        {
-            lineData.push_back(field.toFloat());
+                      if(counter == 0){
+                          distance = value.toDouble();
+                          emit sendData( secTimer, distance); /**< Emisja sygnału do wykresu */
+                          qDebug()<<value;
+                      }
+                      else if(counter == 1){
+                          light = value.toDouble();
+//                          qDebug()<<value;
+                      }
+                      else if(counter == 2){
+                          compass = value;
+//                          qDebug()<<value;
+                      }
+                      else if (counter == 3){
+                          temperature = value.toDouble();
+//                          qDebug()<<value;
+                          counter = 0;
+                      }
+                    }
+//                     qDebug()<<strData;
+                    ++counter;
+                    ui->textEditData->append(strData);
+
+
+                }
         }
-     //   dataVector.push_back(lineData);
+        }
+        qApp->processEvents();
+      }
 
-    }
-    qDebug()<<x;
-    qDebug()<<y;
-    qDebug()<<strData.toDouble();
-    emit sendData(x, y); /**< Emisja sygnału do wykresu */
-    dataVector.append(strData);
-    ui->textEditData->append(strData);
-       QTimer::singleShot(100, this, SLOT(on_pushButtonRead_clicked())); /**< odczyt co stały odcinek czasu*/
+   //    QTimer::singleShot(100, this, &MainWindow::on_pushButtonRead_clicked); /**< odczyt co stały odcinek czasu*/
 
 }
+
 
 /**
  * @brief Slot obsługujący przycisk "on_pushButton_clicked()"
@@ -218,8 +251,14 @@ void MainWindow::on_pushButtonRead_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    newWindow->show();// Wyświetlenie nowego okna
-    diagram->show(); //Wyświetlenie okna wykresu
+    newWindow->show();/**< Wyświetlenie nowego okna */
+    diagram = new Diagram(this);
+    diagram->show();
+}
 
+
+void MainWindow::on_pushButtonClearMonitor_clicked()
+{
+  ui->textEditData->clear();
 }
 
