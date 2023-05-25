@@ -45,6 +45,7 @@ private slots:
 
     void receiveData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
 
+    void receiveSpaceData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
 
 private:
     Ui::Diagram *ui; /**< Wskaźnik na interfejs użytkownika (UI) */

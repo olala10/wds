@@ -9,6 +9,7 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 #include <QtCore/QVector>
+#include <QPixmap>
 #include "diagram.h"
 
 
@@ -39,14 +40,20 @@ public:
         * @brief Destruktor klasy NewWindow.
         */
     ~NewWindow();
+signals:
+    void sendSpaceData(double x, double y);
 
 private slots:
-    void on_pushButtonDiagram_clicked();
+    void on_pushButtonDiagram_toggled();
+    void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
   Diagram* chartSpace;
+  void setupChart(){}; // prywatna metoda do ustawienia wykresu
+  bool spacePicStatus = false;
+  bool greenPicStatus1 = false;
 
 };
 

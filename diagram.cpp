@@ -19,7 +19,7 @@ Diagram::Diagram(QWidget *parent) :
    connect(parent, SIGNAL(sendData(double,double)), this, SLOT(receiveData(double,double))); /**< Łączenie sygnału, gdzie 1 i 3
   //to obiekty okien, między którymi przesyłane są dane a 2 i 4 składowa to nazwy sygnału i slotu, które mają być połączone*/
 
-
+    connect(parent, SIGNAL(sendSpaceData(double,double)), this, SLOT(receiveSpaceData(double,double)));
 }
 
 
@@ -100,6 +100,10 @@ void Diagram::receiveData(double x, double variable)
     plot();
 }
 
-
+void Diagram::receiveSpaceData(double x, double variable)
+{
+    addPoint(x, variable);
+    plot();
+}
 
 

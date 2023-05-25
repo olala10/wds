@@ -10,70 +10,24 @@
     <height>574</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color:  rgb(5, 6, 45);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="acceptDrops">
-       <bool>true</bool>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="title">
-       <string>MENU NAWIGACYJNE</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushButtonSearch">
-         <property name="text">
-          <string>Szukaj</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="2">
-        <widget class="QComboBox" name="comboBoxDevices"/>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushButtonConnect">
-         <property name="text">
-          <string>Połącz</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="pushButtonDisconnect">
-         <property name="text">
-          <string>Rozłącz</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="pushButtonRead">
-         <property name="text">
-          <string>Odczytaj</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="2">
+    <item row="2" column="2">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -86,39 +40,91 @@
       </property>
      </spacer>
     </item>
-    <item row="1" column="0" colspan="3">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>566</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="2" column="0">
+    <item row="5" column="0">
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+  cursor: pointer;</string>
+      </property>
       <property name="title">
-       <string>MONITOR PORTU SZEREGOWEGO</string>
+       <string/>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QPushButton" name="pushButtonClear">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
          <property name="text">
           <string>Wyczyść</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QTextEdit" name="textEditLogs"/>
+       <item row="2" column="0">
+        <widget class="QTextEdit" name="textEditLogs">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 70);</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>Phantomsans</family>
+           <bold>true</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">.QLabel {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Monitor portu szeregowego</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="2" column="1">
+    <item row="5" column="1">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -131,26 +137,295 @@
       </property>
      </spacer>
     </item>
-    <item row="2" column="2">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="title">
-       <string>ODCZYTANE DANE</string>
+    <item row="2" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="acceptDrops">
+       <bool>true</bool>
       </property>
-      <layout class="QFormLayout" name="formLayout">
-       <item row="0" column="0" colspan="2">
-        <widget class="QTextEdit" name="textEditData"/>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+  cursor: pointer;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButtonSearch">
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+ border: none;
+border-radius: 8px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: rgb(5, 6, 45);
+  color: rgb(255, 255, 255);
+border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+
+}
+
+.QPushButton:pressed {
+   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string>Szukaj</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QComboBox" name="comboBoxDevices">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 70);
+border: none;
+padding: 4px;</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
+        <widget class="QPushButton" name="pushButtonConnect">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string>Połącz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="pushButtonDisconnect">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
+         <property name="text">
+          <string>Rozłącz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="pushButtonRead">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+   background-color: rgba(175, 64, 255, 255);
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string>Odczytaj</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="3">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>566</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="2">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+  cursor: pointer;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="1" column="0" colspan="2">
+        <widget class="QTextEdit" name="textEditData">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(255, 255, 255, 70);</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
         <widget class="QPushButton" name="pushButton">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
          <property name="text">
           <string>Wizualizuj w nowym oknie</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <widget class="QPushButton" name="pushButtonClearMonitor">
+         <property name="styleSheet">
+          <string notr="true">.QPushButton {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.QPushButton:hover {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: rgb(255, 255, 255);
+}
+
+.QPushButton:pressed {
+   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
+         </property>
          <property name="text">
           <string>Wyczyść</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Phantomsans</family>
+           <pointsize>10</pointsize>
+           <bold>true</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">.QLabel {
+
+border-radius: 4px;
+  background-color: rgb(5, 6, 45);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3px;
+  touch-action: manipulation;
+  white-space: nowrap;
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Odczytane dane</string>
          </property>
         </widget>
        </item>

@@ -181,65 +181,52 @@ void MainWindow::on_pushButtonClear_clicked()
 
 void MainWindow::on_pushButtonRead_toggled(bool Checked)
 {
-//    QDateTime currentTime = QDateTime::currentDateTime();
-//    double currentTimeDouble = static_cast<double>(currentTime.toMSecsSinceEpoch()) / 1000.0;
-    if (!Checked) { _Start = false;  return; }
+    if (!Checked) { /**< Sprawdzenie warunku wciśnięcia przycisku
+ */
+        _Start = false;
+        return;
+    }
+
     _Start = true;
-     double x=2;
+    double x = 2;
 
-
-    QByteArray data ;
-   // ui->textEditData->append(QString(data));
+    QByteArray data;
     while (_Start) {
         data = this->device->readAll();
-        int counter=0;
-        if (!data.isEmpty())  {
-            QString strData = QString::fromUtf8(data);
-            if(strData.startsWith("start")){
-            ++secTimer;
-                int startIndex = strData.indexOf('#'); /**< index między od którego zaczynamy odczyt */
-                for (int i = startIndex; i< strData.length(); ++i){
 
-                    int endIndex = strData.indexOf('#', startIndex + 1);
-                    if (endIndex >= 0){
-                     QString value = strData.mid(startIndex + 1, endIndex - startIndex - 1);
-                   //   qDebug()<<value;
+        if (!data.isEmpty()) {
+            QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
 
-                      startIndex = strData.indexOf('#', endIndex + 1);
+            if (strData.startsWith("start")) { /**< Jeżeli linia zaczyna się od startu zwiekszamy timer i nastepuje odczyt */
+                ++secTimer;
 
-                      if(counter == 0){
-                          distance = value.toDouble();
-                          emit sendData( secTimer, distance); /**< Emisja sygnału do wykresu */
-                          qDebug()<<value;
-                      }
-                      else if(counter == 1){
-                          light = value.toDouble();
-//                          qDebug()<<value;
-                      }
-                      else if(counter == 2){
-                          compass = value;
-//                          qDebug()<<value;
-                      }
-                      else if (counter == 3){
-                          temperature = value.toDouble();
-//                          qDebug()<<value;
-                          counter = 0;
-                      }
-                    }
-//                     qDebug()<<strData;
-                    ++counter;
-                    ui->textEditData->append(strData);
+                QStringList values = strData.split('#'); /**< Ustalenie znaku podziału */
 
+                if (values.size() >= 6) { /**< Sprawdzenie wielkości odczytu */
+                    distance = values[1].toDouble(); /**< Dodanie wartości odległości do listy */
+                    light = values[3].toDouble(); /**< Dodanie wartości światła do listy */
+                    temperature = values[5].toDouble(); /**< Dodanie wartości temperatury do listy */
 
+                    emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
+                    double a = 2, b =3;
+                         qDebug()<<distance;
+                    emit sendSpaceSensorData(a, b);
+                    qApp->processEvents();
+                    //qDebug()<<distance;
+
+                    qDebug() << "Distance: " << values[1];
+//                    qDebug() << "Light: " << values[3];
+//                    qDebug() << "Temperature: " << values[5];
                 }
+
+                ui->textEditData->append(strData);
+            }
         }
-        }
+
         qApp->processEvents();
-      }
-
-   //    QTimer::singleShot(100, this, &MainWindow::on_pushButtonRead_clicked); /**< odczyt co stały odcinek czasu*/
-
+    }
 }
+
 
 
 /**
@@ -252,8 +239,8 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 void MainWindow::on_pushButton_clicked()
 {
     newWindow->show();/**< Wyświetlenie nowego okna */
-    diagram = new Diagram(this);
-    diagram->show();
+//    diagram = new Diagram(this);
+//    diagram->show();
 }
 
 

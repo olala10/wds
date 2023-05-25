@@ -55,7 +55,7 @@ signals:
     void openDevice();  /**< Sygnał otwierający komunikację z urządzeniem */
     void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
-    void sendSpaceSensorData(double x, double y); /**< Sygnał do emisji danych z czujnika odległości */
+    void sendSpaceSensorData(double x, double variable); /**< Sygnał do emisji danych z czujnika odległości */
 
 
 private slots:
