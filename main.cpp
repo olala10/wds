@@ -22,8 +22,18 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);///< Inicjalizacja obiektu QApplication
-    MainWindow w;///< Utworzenie obiektu klasy MainWindow.
-    w.show();///< Wywołanie metody show() na obiekcie MainWindow.
+    MainWindow mainWindow;///< Utworzenie obiektu klasy MainWindow.
+    NewWindow newWindow;  ///< Utworzenie obiektu klasy NewWindow.
+    Diagram diagram;
+    QObject::connect(&mainWindow, SIGNAL(sendSpaceSensorData(double,double)), &newWindow, SLOT(receiveSpaceSensorData(double,double)));
+    ///< Połączenie przesyłu danych dla pomiaru odległości
+    QObject::connect(&mainWindow, SIGNAL(sendTemperatureSensorData(double,double)), &newWindow, SLOT(receiveTemperatureSensorData(double,double)));
+     ///< Połączenie przesyłu danych dla pomiaru temperatury z mainwindow do newindow
+
+
+    //QObject::connect(&newWindow, SIGNAL(sendTemperatureChartData(double,double)), &diagram, SLOT(receiveTemperatureChartData(double,double)));
+    ///< Połączenie przesyłu danych dla pomiaru temperatury
+    mainWindow.show();///< Wywołanie metody show() na obiekcie MainWindow.
     return a.exec();///< Uruchomienie pętli głównej aplikacji.
 
 }

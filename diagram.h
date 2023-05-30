@@ -37,15 +37,19 @@ public:
     void addPoint(double x, double y); /**< Funkcja dodająca wartości  */
     void clearData(); /**< Usuwanie wartości z diagramu */
     void plot(); /**< Rysowanie wykresu */
+public slots:
+     void receiveTemperatureChartData(double t, double y); /**< Slot odczytu danych  do wykresu */
 
 private slots:
     void on_pushButtonAdd_clicked();
 
     void on_pushButtonClear_clicked();
 
-    void receiveData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
+//    void receiveData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
 
-    void receiveSpaceData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
+//    void receiveSpaceData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
+
+ //   void receiveTemperatureChartData(double t, double y); /**< Slot odczytu danych  do wykresu */
 
 private:
     Ui::Diagram *ui; /**< Wskaźnik na interfejs użytkownika (UI) */

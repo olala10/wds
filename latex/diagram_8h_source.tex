@@ -1,0 +1,43 @@
+\hypertarget{diagram_8h_source}{}\doxysection{diagram.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCharts>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QChartView>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QLineSeries>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPoint>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram}{Diagram}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram}{Diagram}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_diagram}{Diagram}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_diagram_ab91100b12241a3b33886121bcb664524}{\string~Diagram}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a80993ce985bb2a61afd80bf01f9cba20}{addPoint}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_af3becba96c9a867394ba88391c86ffd3}{clearData}}();\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a5c61cef2972ec751e44d96ba5f01f862}{plot}}();\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonAdd\_clicked();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClear\_clicked();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ receiveData(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ variable);\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ Ui::Diagram\ *ui;\ }
+\DoxyCodeLine{00052\ \ \ \ \ QVector\ <double>\ qv\_x,\ qv\_y;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAM\_H}}
+
+\end{DoxyCode}

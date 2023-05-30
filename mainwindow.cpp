@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->thread = new QThread;
     this->newWindow = new NewWindow;
 
-
     setupChart(); // wywołanie metody do ustawienia wykresu
 }
 /*!
@@ -207,14 +206,12 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
                     light = values[3].toDouble(); /**< Dodanie wartości światła do listy */
                     temperature = values[5].toDouble(); /**< Dodanie wartości temperatury do listy */
 
-                    emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
-                    double a = 2, b =3;
-                         qDebug()<<distance;
-                    emit sendSpaceSensorData(a, b);
-                    qApp->processEvents();
-                    //qDebug()<<distance;
-
-                    qDebug() << "Distance: " << values[1];
+                 //   emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
+                    double a = 2, b =3; // do testowania emisji
+                    emit sendSpaceSensorData(secTimer, distance);
+                    emit sendTemperatureSensorData(a,b);
+                 //   qApp->processEvents();
+//                    qDebug() << "Distance: " << values[1];
 //                    qDebug() << "Light: " << values[3];
 //                    qDebug() << "Temperature: " << values[5];
                 }

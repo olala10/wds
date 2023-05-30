@@ -13,27 +13,63 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: none</string>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>11</x>
      <y>11</y>
      <width>500</width>
-     <height>301</height>
+     <height>281</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
    </property>
    <property name="title">
     <string>Odczyty z magnetometru</string>
    </property>
+   <widget class="QLabel" name="labelCompass">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>181</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBoxDistance">
    <property name="geometry">
     <rect>
-     <x>518</x>
+     <x>546</x>
      <y>11</y>
-     <width>499</width>
+     <width>471</width>
      <height>301</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
    </property>
    <property name="title">
     <string>Pomiar odległości</string>
@@ -46,6 +82,10 @@
       <width>93</width>
       <height>29</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: black;
+border: none;</string>
     </property>
     <property name="text">
      <string>Wykres</string>
@@ -61,7 +101,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #51ff44;</string>
+     <string notr="true"> background-color: #51ff44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -78,7 +119,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true"> background-color:#51ff44;
-</string>
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -94,7 +135,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:#51ff44;</string>
+     <string notr="true">background-color:#51ff44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -110,7 +152,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;</string>
+     <string notr="true"> background-color: #fffa44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -126,7 +169,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;</string>
+     <string notr="true"> background-color: #fffa44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -142,7 +186,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;</string>
+     <string notr="true"> background-color: #fffa44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -158,7 +203,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  #ff2222;</string>
+     <string notr="true"> background-color:  #ff2222;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -175,6 +221,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true"> background-color:  #ff2222;
+border: none;
 </string>
     </property>
     <property name="text">
@@ -191,7 +238,8 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  #ff2222;</string>
+     <string notr="true"> background-color:  #ff2222;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -207,6 +255,14 @@
      <height>251</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
+   </property>
    <property name="title">
     <string>Natężenie światła</string>
    </property>
@@ -214,16 +270,54 @@
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>518</x>
-     <y>327</y>
-     <width>491</width>
+     <x>540</x>
+     <y>330</y>
+     <width>471</width>
      <height>231</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
    </property>
    <property name="title">
     <string>Pomiar temperatury</string>
    </property>
-   <layout class="QGridLayout" name="gridLayout"/>
+   <widget class="QPushButton" name="pushButtonTemperature">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QPushButton{
+background-color: black;
+color: white;
+border: none;
+}
+
+.QPushButton:hover {
+  border: 2px solid rgba(255, 255, 255, 70);
+}
+
+.QPushButton:pressed {
+background-color: rgba(255, 255, 255, 50);
+
+    border: 2px solid  rgba(255, 255, 255, 70);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Wykres</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

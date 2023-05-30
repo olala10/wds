@@ -48,7 +48,7 @@
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
   text-decoration: none;
-  cursor: pointer;</string>
+</string>
       </property>
       <property name="title">
        <string/>
@@ -61,13 +61,13 @@
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
-  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border: none;
   color: #FFFFFF;
   text-align: center;
-  padding: 3px;
-  touch-action: manipulation;
+  padding: 5px;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -76,7 +76,8 @@ border-radius: 4px;
 }
 
 .QPushButton:pressed {
-   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 }</string>
          </property>
          <property name="text">
@@ -151,7 +152,7 @@ border-radius: 4px;
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
   text-decoration: none;
-  cursor: pointer;</string>
+</string>
       </property>
       <property name="title">
        <string/>
@@ -170,25 +171,23 @@ border-radius: 4px;
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
- border: none;
-border-radius: 8px;
+  border: none;
   color: #FFFFFF;
   text-align: center;
   padding: 5px;
-  touch-action: manipulation;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
-  background-color: rgb(5, 6, 45);
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
   color: rgb(255, 255, 255);
-border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
-
 }
 
 .QPushButton:pressed {
-   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 }</string>
          </property>
          <property name="text">
@@ -216,9 +215,9 @@ border-radius: 4px;
   color: #FFFFFF;
   text-align: center;
   padding: 5px;
-  touch-action: manipulation;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -243,13 +242,13 @@ border-radius: 4px;
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
-  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border: none;
   color: #FFFFFF;
   text-align: center;
   padding: 5px;
-  touch-action: manipulation;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -258,7 +257,8 @@ border-radius: 4px;
 }
 
 .QPushButton:pressed {
-   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 }</string>
          </property>
          <property name="text">
@@ -273,13 +273,13 @@ border-radius: 4px;
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
-  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border: none;
   color: #FFFFFF;
   text-align: center;
   padding: 5px;
-  touch-action: manipulation;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -288,10 +288,9 @@ border-radius: 4px;
 }
 
 .QPushButton:pressed {
-   background-color: rgba(175, 64, 255, 255);
-}
-
-</string>
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+}</string>
          </property>
          <property name="text">
           <string>Odczytaj</string>
@@ -325,7 +324,7 @@ border-radius: 4px;
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
   text-decoration: none;
-  cursor: pointer;</string>
+</string>
       </property>
       <property name="title">
        <string/>
@@ -345,13 +344,13 @@ border-radius: 4px;
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
-  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border: none;
   color: #FFFFFF;
   text-align: center;
-  padding: 3px;
-  touch-action: manipulation;
+  padding: 5px;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -360,7 +359,8 @@ border-radius: 4px;
 }
 
 .QPushButton:pressed {
-   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 }</string>
          </property>
          <property name="text">
@@ -375,13 +375,13 @@ border-radius: 4px;
 
 border-radius: 4px;
   background-color: rgb(5, 6, 45);
-  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border: none;
   color: #FFFFFF;
   text-align: center;
-  padding: 3px;
-  touch-action: manipulation;
+  padding: 5px;
+
   white-space: nowrap;
-  cursor: pointer;
+
 }
 
 .QPushButton:hover {
@@ -390,7 +390,8 @@ border-radius: 4px;
 }
 
 .QPushButton:pressed {
-   background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+    background-color: rgb(5, 6, 45);
+    border: 2px solid  qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 }</string>
          </property>
          <property name="text">

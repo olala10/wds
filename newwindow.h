@@ -40,20 +40,32 @@ public:
         * @brief Destruktor klasy NewWindow.
         */
     ~NewWindow();
+
 signals:
     void sendSpaceData(double x, double y);
+    void sendTemperatureChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
 
 private slots:
     void on_pushButtonDiagram_toggled();
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
+    void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
+    void setGreen();
+
+
+    void on_pushButtonTemperature_toggled(bool startDiagram);
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
-  Diagram* chartSpace;
+   Diagram *diagram;
+
   void setupChart(){}; // prywatna metoda do ustawienia wykresu
   bool spacePicStatus = false;
-  bool greenPicStatus1 = false;
+  bool greenPicStatus = false;
+   bool startDiagram = false ;
+  double receivedTime=0, receivedDistance=2;
+  double sendx =0, sendy=0;
+
 
 };
 

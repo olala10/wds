@@ -16,10 +16,13 @@ Diagram::Diagram(QWidget *parent) :
     ui->plot->graph(0)->setLineStyle(QCPGraph::lsNone);
     ui->plot->xAxis->setLabel("Czas[s]");
     ui->plot->yAxis->setLabel("Pomiar");
-   connect(parent, SIGNAL(sendData(double,double)), this, SLOT(receiveData(double,double))); /**< Łączenie sygnału, gdzie 1 i 3
+//   connect(parent, SIGNAL(sendData(double,double)), this, SLOT(receiveData(double,double))); /**< Łączenie sygnału, gdzie 1 i 3
   //to obiekty okien, między którymi przesyłane są dane a 2 i 4 składowa to nazwy sygnału i slotu, które mają być połączone*/
 
-    connect(parent, SIGNAL(sendSpaceData(double,double)), this, SLOT(receiveSpaceData(double,double)));
+ // connect(parent, SIGNAL(sendTemperatureChartData(double, double )), this, SLOT(receiveTemperatureChartData(double,double)));
+   //connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double,double)));
+
+
 }
 
 
@@ -94,16 +97,19 @@ void Diagram::on_pushButtonClear_clicked()
  * metoda dodaje je do wykresu i wywołuje metodę plot
  */
 
-void Diagram::receiveData(double x, double variable)
-{
-    addPoint(x, variable);
-    plot();
-}
+//void Diagram::receiveData(double x, double variable)
+//{
+//    addPoint(x, variable);
+//    plot();
+//}
 
-void Diagram::receiveSpaceData(double x, double variable)
+
+void Diagram::receiveTemperatureChartData(double t, double y)
 {
-    addPoint(x, variable);
+    addPoint(t, y);
     plot();
+    qDebug()<<t<<'/n';
+    qDebug()<<y<<'/n';
 }
 
 

@@ -55,7 +55,10 @@ signals:
     void openDevice();  /**< Sygnał otwierający komunikację z urządzeniem */
     void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
-    void sendSpaceSensorData(double x, double variable); /**< Sygnał do emisji danych z czujnika odległości */
+    void sendSpaceSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika odległości */
+    void sendTemperatureSensorData(double tSpace, double y); /**< Sygnał do emisji danych z czujnika temperatury */
+
+
 
 
 private slots:
@@ -111,7 +114,7 @@ private:
     QSerialPort *device;/**< Wskaźnik na obiekt klasy QSerialPort do obsługi portu szeregowego */
     QThread* thread;/**< Wskaźnik na wątek do obsługi portu szeregowego */
     NewWindow *newWindow;/**< Wskaźnik na nowe okno */
-    Diagram *diagram;
+   // Diagram *diagram;
     QVector<QString> dataVector; /** < Wskaźnik na QWektor do odczytu danych z urządzenia */
     std::vector <float> lineData; /**< Wektor do przechowywania linii odczytanych danych jako typ float */
     bool  _Start = false;
