@@ -68,8 +68,7 @@ background: none;</string>
   border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
   color: black;
   font-family: Phantomsans, sans-serif;
-  text-decoration: none;
-</string>
+  text-decoration: none;</string>
    </property>
    <property name="title">
     <string>Pomiar odległości</string>
@@ -101,25 +100,7 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #51ff44;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="greenPic2">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>60</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"> background-color:#51ff44;
-border: none;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
@@ -135,8 +116,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:#51ff44;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -152,8 +134,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -169,8 +152,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -186,8 +170,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: #fffa44;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -203,8 +188,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  #ff2222;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -220,7 +206,7 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  #ff2222;
+     <string notr="true"> background-color:  rgba(255,255,255,190);
 border: none;
 </string>
     </property>
@@ -238,11 +224,25 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  #ff2222;
-border: none;</string>
+     <string notr="true"> background-color:  rgba(255,255,255,190);
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="greenPic2">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>60</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

@@ -28,17 +28,18 @@ NewWindow::NewWindow(QWidget *parent)
      ui->labelCompass->setScaledContents(true);
      ui->labelCompass->setVisible(true);
 
+//     w =100, h = 100;
+//     pixmapArray[0] = QPixmap ("C:/Users/Acer/Documents/wds/green1.png");
+//     pixmapArray[1] = QPixmap ("C:/Users/Acer/Documents/wds/green2.png");
+//     pixmapArray[2] = QPixmap ("C:/Users/Acer/Documents/wds/green3.png");
+//     ui->greenPic1->setPixmap(pixmapArray[0]);
+//     qDebug()<<"pixmapArray[0]: "<<pixmapArray[0]<<'\n';
+//        ui->greenPic2->setPixmap(pixmapArray[1]);
+//           ui->greenPic3->setPixmap(pixmapArray[2]);
+//     ui->greenPic2->setText("bla");
+//     ui->greenPic2->setVisible(false);
 
-     w= 100, h =100;
-    ui->greenPic1->setVisible(greenPicStatus);
-    ui->greenPic2->setVisible(false);
-    ui->greenPic3->setVisible(false);
-    ui->yellowPic1->setVisible(true);
-    ui->yellowPic2->setVisible(true);
-    ui->yellowPic3->setVisible(true);
-    ui->redPic1->setVisible(true);
-    ui->redPic2->setVisible(true);
-    ui->redPic3->setVisible(true);
+
 
 
 }
@@ -54,26 +55,6 @@ NewWindow::~NewWindow()
 }
 
 /*!
-\brief Slot reagujący na wciśnięcie przycisku "pushButtonDiagram".
-* Tworzy i wyświetla nowy diagram.
-*/
-
-void NewWindow::on_pushButtonDiagram_toggled()
-{
-
-}
-
-void NewWindow::setGreen(){
-    ui->greenPic1->show();
-    ui->greenPic1->setVisible(true);
-    ui->greenPic2->setVisible(true);
-    ui->greenPic3->setVisible(true);
-//    qDebug()<<"Dzialam!"<<'\n';
-
-
-}
-
-/*!
  * \brief Slot reagujący na otrzymanie danych czujnika przestrzeni.
  * \param tSpace Wartość czasu.
  * \param x Wartość współrzędnej x.
@@ -81,9 +62,39 @@ void NewWindow::setGreen(){
 
 void NewWindow::receiveSpaceSensorData(double tSpace, double x)
 {
+    //ui->setupUi(this);
+  distanceStatus =1;
+  if(distanceStatus == 1){
+//  pixmapArray[0] = QPixmap ("C:/Users/Acer/Documents/wds/green1.png");
+//  pixmapArray[1] = QPixmap ("C:/Users/Acer/Documents/wds/green2.png");
+//  pixmapArray[2] = QPixmap ("C:/Users/Acer/Documents/wds/green3.png");
+      qDebug()<<tSpace<<'\n';
+      qDebug()<<x<<'\n';
+      if(x >30){
+          pixmapArray[0] = QPixmap ("C:/Users/Acer/Documents/wds/green1.png");
+          qDebug()<<pixmapArray[0]<<'\n';
+          pixmapArray[1] = QPixmap ("C:/Users/Acer/Documents/wds/green2.png");
+          pixmapArray[2] = QPixmap ("C:/Users/Acer/Documents/wds/green3.png");
+       ui->greenPic1->setPixmap(pixmapArray[0]);
+       ui->greenPic2->setPixmap(pixmapArray[1]);
+       ui->greenPic3->setPixmap(pixmapArray[2]);
+        ui->greenPic1->setVisible(true);
+        ui->greenPic2->setVisible(true);
+        ui->greenPic3->setVisible(true);
 
-//    qDebug()<<tSpace<<'\n';
-    setGreen();
+
+       qDebug()<<"x>30"<<'\n';
+
+      }
+
+
+  qDebug()<<"Status: "<<distanceStatus<<'\n';
+  }
+}
+
+
+void NewWindow::setGreen(){
+    qDebug()<<"Dzialam!"<<'\n';
 
 
 }
@@ -99,25 +110,13 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 
 }
 
-
-
-void NewWindow::on_pushButtonTemperature_toggled(bool startDiagram)
+void NewWindow::on_pushButtonDiagram_clicked()
 {
-    if (!startDiagram) { /**< Sprawdzenie warunku wciśnięcia przycisku
- */
-        startDiagram = false;
-        return;
-    }
-
-    startDiagram = true;
-
-   diagram = new Diagram(this);
-
-    diagram->show();
-    connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double, double)));
-     while (startDiagram){
-    emit sendTemperatureChartData(sendx, sendy);
-     }
 
 }
 
+void NewWindow::on_pushButtonTemperature_clicked()
+{
+
+
+}

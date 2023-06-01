@@ -46,13 +46,13 @@ signals:
     void sendTemperatureChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
 
 private slots:
-    void on_pushButtonDiagram_toggled();
+    void on_pushButtonDiagram_clicked();
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
     void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
-    void setGreen();
+//    void setGreen();
 
 
-    void on_pushButtonTemperature_toggled(bool startDiagram);
+    void on_pushButtonTemperature_clicked();
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
@@ -60,11 +60,17 @@ private:
    Diagram *diagram;
 
   void setupChart(){}; // prywatna metoda do ustawienia wykresu
+  void updatePixmap();
+      void setGreen();
+
   bool spacePicStatus = false;
   bool greenPicStatus = false;
+  int distanceStatus = 0;
    bool startDiagram = false ;
   double receivedTime=0, receivedDistance=2;
   double sendx =0, sendy=0;
+  int w =0 , h =0;
+  QPixmap pixmapArray[9];
 
 
 };

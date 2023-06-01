@@ -23,6 +23,7 @@ Diagram::Diagram(QWidget *parent) :
    //connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double,double)));
 
 
+//    connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double, double)));
 }
 
 
