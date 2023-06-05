@@ -45,9 +45,12 @@ signals:
     void sendSpaceData(double x, double y);
     void sendTemperatureChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
 
-private slots:
-    void on_pushButtonDiagram_clicked();
+public slots: //BK
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
+    void receiveLightSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika światła */
+
+private slots:
+
     void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
 //    void setGreen();
 
@@ -61,7 +64,7 @@ private:
 
   void setupChart(){}; // prywatna metoda do ustawienia wykresu
   void updatePixmap();
-      void setGreen();
+
 
   bool spacePicStatus = false;
   bool greenPicStatus = false;

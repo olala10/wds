@@ -29,11 +29,14 @@ int main(int argc, char *argv[])
     ///< Połączenie przesyłu danych dla pomiaru odległości
     QObject::connect(&mainWindow, SIGNAL(sendTemperatureSensorData(double,double)), &newWindow, SLOT(receiveTemperatureSensorData(double,double)));
      ///< Połączenie przesyłu danych dla pomiaru temperatury z mainwindow do newindow
-
+    QObject::connect(&mainWindow, SIGNAL(sendLightSensorData(double,double)), &newWindow, SLOT(receiveLightSensorData(double,double)));
+    ///< Połączenie przesyłu danych dla pomiaru natężenia światła z mainwindow do newindow
 
     //QObject::connect(&newWindow, SIGNAL(sendTemperatureChartData(double,double)), &diagram, SLOT(receiveTemperatureChartData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru temperatury
+    mainWindow.SetNewWindow(&newWindow); //BK
     mainWindow.show();///< Wywołanie metody show() na obiekcie MainWindow.
+    newWindow.show(); //BK
     return a.exec();///< Uruchomienie pętli głównej aplikacji.
 
 }

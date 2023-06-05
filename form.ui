@@ -14,14 +14,14 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: none</string>
+   <string notr="true">background-color:  rgb(5, 6, 45);</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>11</x>
      <y>11</y>
-     <width>500</width>
+     <width>261</width>
      <height>281</height>
     </rect>
    </property>
@@ -39,15 +39,28 @@
    <widget class="QLabel" name="labelCompass">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
+      <x>40</x>
+      <y>50</y>
       <width>181</width>
       <height>171</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: none;
+     <string notr="true">  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
 background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelArrow">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>70</y>
+      <width>16</width>
+      <height>51</height>
+     </rect>
     </property>
     <property name="text">
      <string/>
@@ -60,7 +73,7 @@ background: none;</string>
      <x>546</x>
      <y>11</y>
      <width>471</width>
-     <height>301</height>
+     <height>281</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -73,23 +86,6 @@ background: none;</string>
    <property name="title">
     <string>Pomiar odległości</string>
    </property>
-   <widget class="QPushButton" name="pushButtonDiagram">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>270</y>
-      <width>93</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: black;
-border: none;</string>
-    </property>
-    <property name="text">
-     <string>Wykres</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="greenPic1">
     <property name="geometry">
      <rect>
@@ -100,7 +96,9 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true"> background-color:  #81ee1a;
+border: none;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -116,7 +114,7 @@ border: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
+     <string notr="true"> background-color:  #81ee1a;
 border: none;
 </string>
     </property>
@@ -134,7 +132,7 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
+     <string notr="true"> background-color:  #fffa44;
 border: none;
 </string>
     </property>
@@ -152,7 +150,7 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
+     <string notr="true"> background-color:  #fffa44;
 border: none;
 </string>
     </property>
@@ -170,9 +168,8 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
-border: none;
-</string>
+     <string notr="true"> background-color:  #fffa44;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -188,9 +185,8 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
-border: none;
-</string>
+     <string notr="true"> background-color:  #ee4c1a;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -206,7 +202,7 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
+     <string notr="true"> background-color:  #ee4c1a;
 border: none;
 </string>
     </property>
@@ -224,9 +220,8 @@ border: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color:  rgba(255,255,255,190);
-border: none;
-</string>
+     <string notr="true"> background-color:  #ee4c1a;
+border: none;</string>
     </property>
     <property name="text">
      <string/>
@@ -241,8 +236,30 @@ border: none;
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> background-color:  #81ee1a;
+border: none;
+</string>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="triangleLabel">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>130</y>
+      <width>131</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: none;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -251,7 +268,7 @@ border: none;
     <rect>
      <x>11</x>
      <y>315</y>
-     <width>500</width>
+     <width>511</width>
      <height>251</height>
     </rect>
    </property>
@@ -266,14 +283,40 @@ border: none;
    <property name="title">
     <string>Natężenie światła</string>
    </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>20</y>
+      <width>271</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>151</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>330</y>
-     <width>471</width>
-     <height>231</height>
+     <x>550</x>
+     <y>320</y>
+     <width>461</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -318,6 +361,27 @@ background-color: rgba(255, 255, 255, 50);
      <string>Wykres</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>10</y>
+     <width>231</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
+   </property>
+   <property name="title">
+    <string>Tabela</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -50,12 +50,14 @@ public:
 
     ~MainWindow();
 
-
+    void SetNewWindow(NewWindow *pWin) { newWindow = pWin; } // BK
 signals:
     void openDevice();  /**< Sygnał otwierający komunikację z urządzeniem */
     void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
     void sendSpaceSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika odległości */
+    void sendLightSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika światła */
+    void sendCompasSensorData(double tSpace); /**< Sygnał do emisji danych z magnetometru */
     void sendTemperatureSensorData(double tSpace, double y); /**< Sygnał do emisji danych z czujnika temperatury */
 
 
@@ -98,6 +100,7 @@ private slots:
     void on_pushButtonClearMonitor_clicked();
 
 
+    void on__pButton_Test_toggled(bool State); // BK
 
 private:
     Ui::MainWindow *ui;/**< Wskaźnik na interfejs użytkownika (UI) */

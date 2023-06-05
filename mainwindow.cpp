@@ -171,6 +171,43 @@ void MainWindow::on_pushButtonClear_clicked()
 
 //void MainWindow::sendSpaceSensorData();
 
+
+
+QByteArray SimulateReceiver()
+{
+  static int Counter = 0;
+  std::this_thread::sleep_for(std::chrono::milliseconds(300));
+  QByteArray  ByteData;
+
+
+  const char *Data[] {
+            "10#30#40#50#60",
+            "20#30#40#50#60",
+            "30#30#40#50#60",
+            "40#30#40#50#60",
+            "50#30#40#50#60",
+            "60#30#40#50#60",
+            "70#30#40#50#60",
+            "3#30#40#50#60",
+            "21#30#40#50#60",
+            "7#30#40#50#60",
+            "40#30#40#50#60",
+            nullptr
+          };
+
+  ByteData += "start#";
+  ByteData += Data[Counter];
+
+  ++Counter;
+  if (Data[Counter] == nullptr) Counter = 0;
+
+  return ByteData;
+}
+
+
+
+
+
 /**
  * @brief Slot obsługujący przycisk "on_pushButtonRead_toggled()"
  *
@@ -191,7 +228,8 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
     QByteArray data;
     while (_Start) {
-        data = this->device->readAll();
+//        data = this->device->readAll();
+        data =  SimulateReceiver();
 
         if (!data.isEmpty()) {
             QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
@@ -207,9 +245,10 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
                     temperature = values[5].toDouble(); /**< Dodanie wartości temperatury do listy */
 
                  //   emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
-                    double a = 2, b =3; // do testowania emisji
+//                    double a = 2, b =3; // do testowania emisji
                     emit sendSpaceSensorData(secTimer, distance);
-                    emit sendTemperatureSensorData(a,b);
+                    emit sendLightSensorData(secTimer, light);
+//                    emit sendTemperatureSensorData(a,b);
                  //   qApp->processEvents();
 //                    qDebug() << "Distance: " << values[1];
 //                    qDebug() << "Light: " << values[3];
@@ -246,3 +285,14 @@ void MainWindow::on_pushButtonClearMonitor_clicked()
   ui->textEditData->clear();
 }
 
+// BK
+void MainWindow::on__pButton_Test_toggled(bool State)
+{
+  if (newWindow) {
+    if (State) {
+        newWindow->receiveSpaceSensorData(1,31);
+    } else {
+        newWindow->receiveSpaceSensorData(1,10);
+    }
+  }
+}
