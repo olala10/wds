@@ -10,6 +10,9 @@
 #include <QtCharts/QLineSeries>
 #include <QtCore/QVector>
 #include <QPixmap>
+#include <QGroupBox>
+#include <QLabel>
+#include <vector>
 #include "diagram.h"
 
 
@@ -47,15 +50,20 @@ signals:
 
 public slots: //BK
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
-    void receiveLightSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika światła */
+    void receiveLightSensorData(double tSpace, double x, double distance); /**< Sygnał do odbioru danych z czujnika światła */
+    void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
+
 
 private slots:
 
-    void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
 //    void setGreen();
 
 
     void on_pushButtonTemperature_clicked();
+
+
+
+    void on_lightButton_clicked();
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
@@ -64,6 +72,9 @@ private:
 
   void setupChart(){}; // prywatna metoda do ustawienia wykresu
   void updatePixmap();
+  double hel = 0;
+  double hel1 = 0;
+
 
 
   bool spacePicStatus = false;
@@ -74,6 +85,11 @@ private:
   double sendx =0, sendy=0;
   int w =0 , h =0;
   QPixmap pixmapArray[9];
+
+  int flag = 0;
+  std::vector<QLabel*> labelVector;
+  std::vector<QLabel*> tempLabelVector;
+
 
 
 };

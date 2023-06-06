@@ -18,6 +18,7 @@
 #include "newwindow.h"
 #include "diagram.h"
 #include <vector>
+#include<QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -56,7 +57,7 @@ signals:
     void closeDevice();  /**< Sygnał zamykający komunikację z urządzeniem */
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
     void sendSpaceSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika odległości */
-    void sendLightSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika światła */
+    void sendLightSensorData(double tSpace, double x, double distance); /**< Sygnał do emisji danych z czujnika światła */
     void sendCompasSensorData(double tSpace); /**< Sygnał do emisji danych z magnetometru */
     void sendTemperatureSensorData(double tSpace, double y); /**< Sygnał do emisji danych z czujnika temperatury */
 

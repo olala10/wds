@@ -181,16 +181,16 @@ QByteArray SimulateReceiver()
 
 
   const char *Data[] {
-            "10#30#40#50#60",
-            "20#30#40#50#60",
-            "30#30#40#50#60",
-            "40#30#40#50#60",
-            "50#30#40#50#60",
-            "60#30#40#50#60",
+            "10#30#0#50#60",
+            "20#30#4#50#60",
+            "30#30#100#50#60",
+            "40#30#300#50#60",
+            "50#30#250#50#60",
+            "60#30#50#50#60",
             "70#30#40#50#60",
-            "3#30#40#50#60",
+            "3#30#6#50#60",
             "21#30#40#50#60",
-            "7#30#40#50#60",
+            "7#3#30#5#60",
             "40#30#40#50#60",
             nullptr
           };
@@ -247,12 +247,12 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
                  //   emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
 //                    double a = 2, b =3; // do testowania emisji
                     emit sendSpaceSensorData(secTimer, distance);
-                    emit sendLightSensorData(secTimer, light);
-//                    emit sendTemperatureSensorData(a,b);
+                    emit sendLightSensorData(secTimer, light, distance);
+                    emit sendTemperatureSensorData(secTimer,temperature);
                  //   qApp->processEvents();
-//                    qDebug() << "Distance: " << values[1];
-//                    qDebug() << "Light: " << values[3];
-//                    qDebug() << "Temperature: " << values[5];
+                    qDebug() << "Distance: " << values[1];
+                    qDebug() << "Light: " << values[3];
+                    qDebug() << "Temperature: " << values[5];
                 }
 
                 ui->textEditData->append(strData);

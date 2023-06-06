@@ -45,7 +45,7 @@ NewWindow::NewWindow(QWidget *parent)
      */
 
 
-    pixmapArray[0] = QPixmap ("./green1.png");/**< Ustawienie pixmapy dla zielonej strefy */ //BK
+    pixmapArray[0] = QPixmap ("C:/Users/Acer/Documents/wds/wds/green1.png");/**< Ustawienie pixmapy dla zielonej strefy */ //BK
     pixmapArray[1] = QPixmap ("./green2.png"); /**< Ustawienie pixmapy dla zielonej strefy */  //BK
     pixmapArray[2] = QPixmap ("./green3.png"); /**< Ustawienie pixmapy dla zielonej strefy */  //BK
 
@@ -82,6 +82,27 @@ NewWindow::NewWindow(QWidget *parent)
     ui->redPic3->setVisible(false);  /**< Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna */
 
 
+    QGroupBox* lightBox = ui->lightBox; /**< Utworzenie wskaźnika na groupbox z etykietami dotyczącymi natężenia świtała */
+
+    for (QObject* child : lightBox->children()) {  /**< Iterowanie po wszystkich dzieciach groupboxa */
+        QLabel* label = qobject_cast<QLabel*>(child); /**< Sprawdzanie, czy dziecko jest etykietą QLabel */
+        if (label) {
+            labelVector.push_back(label); /**< Dodanie etykiety do wektora */
+        }
+    }
+
+    hel = ui->lightSpinBox->value();
+    qDebug()<<"Doublebox: "<<hel<<'\n';
+
+    QGroupBox* temperatureBox = ui->temperatureBox; /**< Utworzenie wskaźnika na groupbox z etykietami dotyczącymi temperatury */
+    for (QObject* child : temperatureBox->children()) {  /**< Iterowanie po wszystkich dzieciach groupboxa */
+        QLabel* label = qobject_cast<QLabel*>(child); /**< Sprawdzanie, czy dziecko jest etykietą QLabel */
+        if (label) {
+            tempLabelVector.push_back(label); /**< Dodanie etykiety do wektora */
+        }
+    }
+
+
 }
 
 /*!
@@ -93,6 +114,11 @@ NewWindow::~NewWindow()
 {
     delete ui;
 }
+
+
+
+
+
 
 /*!
  * \brief Slot reagujący na otrzymanie danych czujnika przestrzeni.
@@ -150,16 +176,82 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
   }
 }
 
-void NewWindow::receiveLightSensorData(double tSpace, double x){
-//          qDebug() << "Zegar: " << tSpace<<'\n';
-//          qDebug() << " Light: " << x<<'\n';
+void NewWindow::receiveLightSensorData(double tSpace, double x, double distance){
+
+//    hel = ui->lightSpinBox->value();
+
+    labelVector[7]->setStyleSheet("background-color: red;");
+
+    qDebug()<<"Doublebox: "<<hel<<'\n';
+    int j = static_cast<int>(hel);
+    if(x<10){
+        labelVector[j]->setStyleSheet("background-color: yellow;");
+    }
+    else if(x<100){
+        labelVector[j]->setStyleSheet("background-color: #958e98;");
+    }
+    else if(x<250){
+        labelVector[j]->setStyleSheet("background-color: #9560ac;");
+    }
+    else {
+        labelVector[j]->setStyleSheet("background-color: white;");
+    }
+
+
 }
+
+
+void NewWindow::on_lightButton_clicked()
+{
+
+    if(ui->lightSpinBox->value()>=25){
+    QMessageBox msgBox; /**< Utworzenie okna dialogowego z informacją o wprowadzeniu wartości spoza zakresu */
+          // Ustaw arkusz stylu
+    msgBox.setStyleSheet("QMessageBox { background-color: rgba(255, 255, 255, 0.5); "
+                               "border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, "
+                               "stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), "
+                               "stop:1 rgba(0, 221, 235, 255)); "
+                               "color: black; "
+                               "font-family: Phantomsans, sans-serif; "
+                               "text-decoration: none; }");
+
+          // Ustaw ikonę, tytuł i treść wiadomości
+          msgBox.setIcon(QMessageBox::Critical);
+          msgBox.setWindowTitle("Błąd");
+          msgBox.setText("Wartość niedozwolona!");
+          msgBox.exec();
+    }
+    hel=ui->lightSpinBox->value();
+
+}
+
+
+
+
+
+
 
 void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 {
 
-//    qDebug()<<tSpace<<'\n';
-//    qDebug()<<y<<'\n';
+    tempLabelVector[7]->setStyleSheet("background-color: red;");
+
+
+    int j = static_cast<int>(hel);
+    if(y<10){
+        tempLabelVector[j]->setStyleSheet("background-color: yellow;");
+    }
+    else if(y<100){
+        tempLabelVector[j]->setStyleSheet("background-color: #958e98;");
+    }
+    else if(y<250){
+        tempLabelVector[j]->setStyleSheet("background-color: #9560ac;");
+    }
+    else {
+        tempLabelVector[j]->setStyleSheet("background-color: white;");
+    }
+
+
    sendx=tSpace;
    sendy=y;
 
@@ -172,3 +264,11 @@ void NewWindow::on_pushButtonTemperature_clicked()
 
 
 }
+
+
+
+
+
+
+
+
