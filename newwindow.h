@@ -50,7 +50,7 @@ signals:
 
 public slots: //BK
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
-    void receiveLightSensorData(double tSpace, double x, double distance); /**< Sygnał do odbioru danych z czujnika światła */
+    void receiveLightSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika światła */
     void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
 
 

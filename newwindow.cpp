@@ -45,7 +45,7 @@ NewWindow::NewWindow(QWidget *parent)
      */
 
 
-    pixmapArray[0] = QPixmap ("C:/Users/Acer/Documents/wds/wds/green1.png");/**< Ustawienie pixmapy dla zielonej strefy */ //BK
+    pixmapArray[0] = QPixmap ("./green1.png");/**< Ustawienie pixmapy dla zielonej strefy */ //BK
     pixmapArray[1] = QPixmap ("./green2.png"); /**< Ustawienie pixmapy dla zielonej strefy */  //BK
     pixmapArray[2] = QPixmap ("./green3.png"); /**< Ustawienie pixmapy dla zielonej strefy */  //BK
 
@@ -176,26 +176,38 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
   }
 }
 
-void NewWindow::receiveLightSensorData(double tSpace, double x, double distance){
+void NewWindow::receiveLightSensorData(double tSpace, double x){
 
 //    hel = ui->lightSpinBox->value();
 
-    labelVector[7]->setStyleSheet("background-color: red;");
+//    labelVector[7]->setStyleSheet("background-color: red;");
+    qDebug()<<"Received lux: "<<x<<'\n';
 
     qDebug()<<"Doublebox: "<<hel<<'\n';
     int j = static_cast<int>(hel);
-    if(x<10){
-        labelVector[j]->setStyleSheet("background-color: yellow;");
+    if (x < 10) {
+        labelVector[j]->setStyleSheet("background-color: #1a1a1a");
     }
-    else if(x<100){
-        labelVector[j]->setStyleSheet("background-color: #958e98;");
+    else if (x >= 10 && x < 100) {
+        labelVector[j]->setStyleSheet("background-color: #3c3c3c;");
     }
-    else if(x<250){
-        labelVector[j]->setStyleSheet("background-color: #9560ac;");
+    else if (x >= 100 && x < 250) {
+        labelVector[j]->setStyleSheet("background-color: #616161;");
+    }
+    else if (x >= 250 && x < 500) {
+        labelVector[j]->setStyleSheet("background-color: #787878;");
+    }
+    else if (x >= 500 && x < 750) {
+        labelVector[j]->setStyleSheet("background-color: #b4b4b4;");
+    }
+    else if (x >= 750 && x < 1000) {
+        labelVector[j]->setStyleSheet("background-color: #f0f0f0;");
     }
     else {
-        labelVector[j]->setStyleSheet("background-color: white;");
+        labelVector[j]->setStyleSheet("background-color: #f9f9f9;");
     }
+
+
 
 
 }
@@ -203,6 +215,7 @@ void NewWindow::receiveLightSensorData(double tSpace, double x, double distance)
 
 void NewWindow::on_lightButton_clicked()
 {
+
 
     if(ui->lightSpinBox->value()>=25){
     QMessageBox msgBox; /**< Utworzenie okna dialogowego z informacją o wprowadzeniu wartości spoza zakresu */
@@ -223,6 +236,7 @@ void NewWindow::on_lightButton_clicked()
     }
     hel=ui->lightSpinBox->value();
 
+
 }
 
 
@@ -234,21 +248,42 @@ void NewWindow::on_lightButton_clicked()
 void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 {
 
-    tempLabelVector[7]->setStyleSheet("background-color: red;");
+//    tempLabelVector[7]->setStyleSheet("background-color: red;");
 
 
     int j = static_cast<int>(hel);
-    if(y<10){
-        tempLabelVector[j]->setStyleSheet("background-color: yellow;");
+    if(y<-15){
+        tempLabelVector[j]->setStyleSheet("background-color: #66e0ff;");
     }
-    else if(y<100){
-        tempLabelVector[j]->setStyleSheet("background-color: #958e98;");
+    else if(y<-5){
+        tempLabelVector[j]->setStyleSheet("background-color: #ccf5ff;");
     }
-    else if(y<250){
-        tempLabelVector[j]->setStyleSheet("background-color: #9560ac;");
+    else if(y<0){
+        tempLabelVector[j]->setStyleSheet("background-color: #e6ffe6;");
+    }
+    else if(y<5){
+        tempLabelVector[j]->setStyleSheet("background-color: #aaff80;");
+    }
+    else if(y<10){
+        tempLabelVector[j]->setStyleSheet("background-color: #77ff33;");
+    }
+    else if(y<15){
+        tempLabelVector[j]->setStyleSheet("background-color: #ffff4d;");
+    }
+    else if(y<20){
+        tempLabelVector[j]->setStyleSheet("background-color: #ffff00;");
+    }
+    else if(y<25){
+        tempLabelVector[j]->setStyleSheet("background-color: #ff9933;");
+    }
+    else if(y<30){
+        tempLabelVector[j]->setStyleSheet("background-color: #ff8000c;");
+    }
+    else if(y<35){
+        tempLabelVector[j]->setStyleSheet("background-color: #ff471a;");
     }
     else {
-        tempLabelVector[j]->setStyleSheet("background-color: white;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ff3300;");
     }
 
 

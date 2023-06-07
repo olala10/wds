@@ -181,17 +181,20 @@ QByteArray SimulateReceiver()
 
 
   const char *Data[] {
-            "10#30#0#50#60",
-            "20#30#4#50#60",
-            "30#30#100#50#60",
-            "40#30#300#50#60",
-            "50#30#250#50#60",
-            "60#30#50#50#60",
-            "70#30#40#50#60",
-            "3#30#6#50#60",
-            "21#30#40#50#60",
-            "7#3#30#5#60",
-            "40#30#40#50#60",
+      "1#3#0#50#60",
+//      "20#2000#4#50#60",
+//      "30#300#100#50#60",
+//      "40#30#300#50#60",
+//      "50#340#250#50#60",
+//      "60#3050#50#50#60",
+//      "70#130#40#50#60",
+//      "3#30#6#50#60",
+//      "21#3#40#50#60",
+//      "7#3#30#5#60",
+//      "40#1000#40#50#60",
+//      "10#100#0#50#60",
+//      "20#240#4#50#60",
+//      "30#30#100#50#60",
             nullptr
           };
 
@@ -228,35 +231,38 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
     QByteArray data;
     while (_Start) {
-//        data = this->device->readAll();
-        data =  SimulateReceiver();
+        data = this->device->readAll();
+//        data =  SimulateReceiver();
 
         if (!data.isEmpty()) {
             QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
 
-            if (strData.startsWith("start")) { /**< Jeżeli linia zaczyna się od startu zwiekszamy timer i nastepuje odczyt */
-                ++secTimer;
+            if (!data.isEmpty()) {
+                QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
 
-                QStringList values = strData.split('#'); /**< Ustalenie znaku podziału */
+                if (strData.startsWith("start")) {
+                    ++secTimer;
 
-                if (values.size() >= 6) { /**< Sprawdzenie wielkości odczytu */
-                    distance = values[1].toDouble(); /**< Dodanie wartości odległości do listy */
-                    light = values[3].toDouble(); /**< Dodanie wartości światła do listy */
-                    temperature = values[5].toDouble(); /**< Dodanie wartości temperatury do listy */
+                    QStringList values = strData.split('#');
+                    if (values.size() >= 6) {
+                        distance = values[1].trimmed().toDouble();
+                        light = values[2].trimmed().toDouble();
+                        temperature = values[3].trimmed().toDouble();
 
-                 //   emit sendData(secTimer, distance); /**< Przesył danych do wykresu */
-//                    double a = 2, b =3; // do testowania emisji
-                    emit sendSpaceSensorData(secTimer, distance);
-                    emit sendLightSensorData(secTimer, light, distance);
-                    emit sendTemperatureSensorData(secTimer,temperature);
-                 //   qApp->processEvents();
-                    qDebug() << "Distance: " << values[1];
-                    qDebug() << "Light: " << values[3];
-                    qDebug() << "Temperature: " << values[5];
+                        emit sendSpaceSensorData(secTimer, distance);
+                        emit sendLightSensorData(secTimer, light);
+                        emit sendTemperatureSensorData(secTimer, temperature);
+
+//                        qDebug() << "Distance: " << distance;
+//                        qDebug() << "Light: " << light;
+//                        qDebug() << "Temperature: " << temperature;
+                    }
+
+                    ui->textEditData->append(strData);
                 }
-
-                ui->textEditData->append(strData);
             }
+
+
         }
 
         qApp->processEvents();

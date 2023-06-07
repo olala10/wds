@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1028</width>
-    <height>577</height>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,9 +20,9 @@
    <property name="geometry">
     <rect>
      <x>11</x>
-     <y>11</y>
+     <y>41</y>
      <width>261</width>
-     <height>281</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -34,7 +34,7 @@
 </string>
    </property>
    <property name="title">
-    <string>Odczyty z magnetometru</string>
+    <string/>
    </property>
    <widget class="QLabel" name="labelCompass">
     <property name="geometry">
@@ -46,7 +46,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+     <string notr="true">border: none;
 background: none;</string>
     </property>
     <property name="text">
@@ -62,6 +62,10 @@ background: none;</string>
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+background: none;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -70,10 +74,10 @@ background: none;</string>
   <widget class="QGroupBox" name="groupBoxDistance">
    <property name="geometry">
     <rect>
-     <x>546</x>
-     <y>11</y>
-     <width>471</width>
-     <height>281</height>
+     <x>536</x>
+     <y>41</y>
+     <width>481</width>
+     <height>251</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -84,7 +88,7 @@ background: none;</string>
   text-decoration: none;</string>
    </property>
    <property name="title">
-    <string>Pomiar odległości</string>
+    <string/>
    </property>
    <widget class="QLabel" name="greenPic1">
     <property name="geometry">
@@ -266,10 +270,10 @@ border: none;</string>
   <widget class="QGroupBox" name="lightBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>310</y>
-     <width>241</width>
-     <height>251</height>
+     <x>10</x>
+     <y>340</y>
+     <width>251</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -281,13 +285,13 @@ border: none;</string>
 </string>
    </property>
    <property name="title">
-    <string>Natężenie światła</string>
+    <string/>
    </property>
-   <widget class="QLabel" name="label1_5">
+   <widget class="QLabel" name="label5">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>30</y>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -299,11 +303,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label2_5">
+   <widget class="QLabel" name="label10">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>70</y>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -315,11 +319,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label3_5">
+   <widget class="QLabel" name="label15">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>110</y>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -331,11 +335,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label4_5">
+   <widget class="QLabel" name="label20">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>150</y>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -347,11 +351,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label1_4">
+   <widget class="QLabel" name="label4">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>30</y>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -363,11 +367,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label2_4">
+   <widget class="QLabel" name="label9">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>70</y>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -379,11 +383,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label3_4">
+   <widget class="QLabel" name="label14">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>110</y>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -395,11 +399,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label4_4">
+   <widget class="QLabel" name="label19">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>150</y>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -411,11 +415,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label1_3">
+   <widget class="QLabel" name="label3">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>30</y>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -427,11 +431,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label2_3">
+   <widget class="QLabel" name="label8">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>70</y>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -443,11 +447,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label3_3">
+   <widget class="QLabel" name="label13">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>110</y>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -459,11 +463,75 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label4_3">
+   <widget class="QLabel" name="label18">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>150</y>
+      <y>140</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label7">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label12">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>100</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label17">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -478,8 +546,8 @@ border: none;</string>
    <widget class="QLabel" name="label1_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>30</y>
+      <x>20</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -491,59 +559,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label2_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>70</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label3_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>110</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label4_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>150</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label1_1">
+   <widget class="QLabel" name="label6">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -555,11 +575,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label2_1">
+   <widget class="QLabel" name="label11">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -571,11 +591,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label3_1">
+   <widget class="QLabel" name="label16">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>110</y>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -587,27 +607,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label4_1">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(59, 147, 252, 0.3);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label5_3">
+   <widget class="QLabel" name="label23">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>190</y>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -619,11 +623,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label5_5">
+   <widget class="QLabel" name="label25">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>190</y>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -635,11 +639,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label5_4">
+   <widget class="QLabel" name="label24">
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>190</y>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -651,11 +655,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label5_2">
+   <widget class="QLabel" name="label22">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>190</y>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -667,11 +671,11 @@ border: none;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label5_1">
+   <widget class="QLabel" name="label21">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>190</y>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -687,10 +691,10 @@ border: none;</string>
   <widget class="QGroupBox" name="temperatureBox">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>310</y>
+     <x>770</x>
+     <y>340</y>
      <width>241</width>
-     <height>251</height>
+     <height>241</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -702,13 +706,13 @@ border: none;</string>
 </string>
    </property>
    <property name="title">
-    <string>Pomiar temperatury</string>
+    <string/>
    </property>
    <widget class="QLabel" name="label1">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
+      <x>20</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -720,8 +724,8 @@ border: none;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
+      <x>60</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -733,8 +737,8 @@ border: none;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>40</y>
+      <x>100</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -746,8 +750,8 @@ border: none;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>40</y>
+      <x>140</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -759,8 +763,8 @@ border: none;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>40</y>
+      <x>180</x>
+      <y>20</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -772,8 +776,8 @@ border: none;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>80</y>
+      <x>20</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -785,8 +789,8 @@ border: none;</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
+      <x>60</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -798,8 +802,8 @@ border: none;</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>80</y>
+      <x>100</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -811,8 +815,8 @@ border: none;</string>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>80</y>
+      <x>140</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -824,8 +828,8 @@ border: none;</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>80</y>
+      <x>180</x>
+      <y>60</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -837,8 +841,8 @@ border: none;</string>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>120</y>
+      <x>20</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -850,8 +854,8 @@ border: none;</string>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>120</y>
+      <x>60</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -863,8 +867,8 @@ border: none;</string>
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>120</y>
+      <x>100</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -876,8 +880,8 @@ border: none;</string>
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>120</y>
+      <x>140</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -889,8 +893,8 @@ border: none;</string>
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>120</y>
+      <x>180</x>
+      <y>100</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -902,8 +906,8 @@ border: none;</string>
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>160</y>
+      <x>20</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -915,8 +919,8 @@ border: none;</string>
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>160</y>
+      <x>60</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -928,8 +932,8 @@ border: none;</string>
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>160</y>
+      <x>100</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -941,8 +945,8 @@ border: none;</string>
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>160</y>
+      <x>140</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -954,8 +958,8 @@ border: none;</string>
    <widget class="QLabel" name="label_20">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>160</y>
+      <x>180</x>
+      <y>140</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -967,8 +971,8 @@ border: none;</string>
    <widget class="QLabel" name="label_21">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>200</y>
+      <x>20</x>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -980,8 +984,8 @@ border: none;</string>
    <widget class="QLabel" name="label_22">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>200</y>
+      <x>60</x>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -993,8 +997,8 @@ border: none;</string>
    <widget class="QLabel" name="label_23">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>200</y>
+      <x>100</x>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1006,8 +1010,8 @@ border: none;</string>
    <widget class="QLabel" name="label_24">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>200</y>
+      <x>140</x>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1019,8 +1023,8 @@ border: none;</string>
    <widget class="QLabel" name="label_25">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>200</y>
+      <x>180</x>
+      <y>180</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -1048,16 +1052,16 @@ border: none;</string>
 </string>
    </property>
    <property name="title">
-    <string>Tabela</string>
+    <string/>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_5">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>310</y>
-     <width>231</width>
-     <height>251</height>
+     <x>280</x>
+     <y>520</y>
+     <width>481</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1069,15 +1073,15 @@ border: none;</string>
 </string>
    </property>
    <property name="title">
-    <string>Tabela</string>
+    <string/>
    </property>
    <widget class="QPushButton" name="lightButton">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>200</y>
-      <width>93</width>
-      <height>29</height>
+      <y>20</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1105,16 +1109,16 @@ border-radius: 4px;
 }</string>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Dodaj pomiar</string>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="lightSpinBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>200</y>
+      <x>140</x>
+      <y>20</y>
       <width>91</width>
-      <height>25</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1126,10 +1130,10 @@ padding: 4px;</string>
    <widget class="QPushButton" name="pushButtonTemperature">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>150</y>
+      <x>240</x>
+      <y>20</y>
       <width>101</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1160,6 +1164,262 @@ border-radius: 4px;
      <string>Wykres</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>340</y>
+     <width>481</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  color: black;
+  font-family: Phantomsans, sans-serif;
+  text-decoration: none;
+</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>309</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: &quot;JetBrains Mono&quot;,monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>Pomiar natężenia światła</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>309</y>
+     <width>481</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: &quot;JetBrains Mono&quot;,monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>309</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: &quot;JetBrains Mono&quot;,monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>Pomiar temperatury</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_28">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: &quot;JetBrains Mono&quot;,monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>Wizualizacja globalna</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_29">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>10</y>
+     <width>491</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), stop:1 rgba(0, 221, 235, 255));
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: &quot;JetBrains Mono&quot;,monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>Pomiar odległości</string>
+   </property>
   </widget>
  </widget>
  <resources/>
