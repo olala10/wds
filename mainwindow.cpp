@@ -182,19 +182,19 @@ QByteArray SimulateReceiver()
 
   const char *Data[] {
       "1#3#0#50#60",
-//      "20#2000#4#50#60",
-//      "30#300#100#50#60",
-//      "40#30#300#50#60",
-//      "50#340#250#50#60",
-//      "60#3050#50#50#60",
-//      "70#130#40#50#60",
-//      "3#30#6#50#60",
-//      "21#3#40#50#60",
-//      "7#3#30#5#60",
-//      "40#1000#40#50#60",
-//      "10#100#0#50#60",
-//      "20#240#4#50#60",
-//      "30#30#100#50#60",
+      "20#2000#4#50#60",
+      "30#300#100#50#60",
+      "40#30#300#50#60",
+      "50#340#250#50#60",
+      "60#3050#50#50#60",
+      "70#130#40#50#60",
+      "3#30#6#50#60",
+      "21#3#40#50#60",
+      "7#3#30#5#60",
+      "40#1000#40#50#60",
+      "10#100#0#50#60",
+      "20#240#4#50#60",
+      "30#30#100#50#60",
             nullptr
           };
 
@@ -231,8 +231,8 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
     QByteArray data;
     while (_Start) {
-        data = this->device->readAll();
-//        data =  SimulateReceiver();
+//        data = this->device->readAll();
+        data =  SimulateReceiver();
 
         if (!data.isEmpty()) {
             QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
