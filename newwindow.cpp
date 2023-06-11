@@ -176,6 +176,13 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
   }
 }
 
+/*!
+ * \brief Slot reagujący na otrzymanie danych czujnika natężenia światła.
+ * \param tSpace Wartość czasu.
+ * \param x Wartość pomiarowa.
+ * \param hel -- wartość wprowadzona do doubleboxa
+ */
+
 void NewWindow::receiveLightSensorData(double tSpace, double x){
 
 //    hel = ui->lightSpinBox->value();
@@ -184,27 +191,28 @@ void NewWindow::receiveLightSensorData(double tSpace, double x){
     qDebug()<<"Received lux: "<<x<<'\n';
 
     qDebug()<<"Doublebox: "<<hel<<'\n';
-    int j = static_cast<int>(hel);
+
+    int j = static_cast<int>(hel); /** przypisanie zmiennej j wartości hel*/
     if (x < 10) {
-        labelVector[j]->setStyleSheet("background-color: #1a1a1a");
+        labelVector[j]->setStyleSheet("background-color: #1a1a1a"); /** Ustawienie koloru #1a1a1a okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if (x >= 10 && x < 100) {
-        labelVector[j]->setStyleSheet("background-color: #3c3c3c;");
+        labelVector[j]->setStyleSheet("background-color: #3c3c3c;"); /** Ustawienie koloru #3c3c3c okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if (x >= 100 && x < 250) {
-        labelVector[j]->setStyleSheet("background-color: #616161;");
+        labelVector[j]->setStyleSheet("background-color: #616161;"); /** Ustawienie koloru #616161 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if (x >= 250 && x < 500) {
-        labelVector[j]->setStyleSheet("background-color: #787878;");
+        labelVector[j]->setStyleSheet("background-color: #787878;"); /** Ustawienie koloru #787878 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if (x >= 500 && x < 750) {
-        labelVector[j]->setStyleSheet("background-color: #b4b4b4;");
+        labelVector[j]->setStyleSheet("background-color: #b4b4b4;"); /** Ustawienie koloru #b4b4b4 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if (x >= 750 && x < 1000) {
-        labelVector[j]->setStyleSheet("background-color: #f0f0f0;");
+        labelVector[j]->setStyleSheet("background-color: #f0f0f0;"); /** Ustawienie koloru #f0f0f0 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else {
-        labelVector[j]->setStyleSheet("background-color: #f9f9f9;");
+        labelVector[j]->setStyleSheet("background-color: #f9f9f9;"); /** Ustawienie koloru #f9f9f9 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
 
 
@@ -212,15 +220,21 @@ void NewWindow::receiveLightSensorData(double tSpace, double x){
 
 }
 
+/*!
+ * \brief Slot reagujący na wciśnięcie przycisku lightButton.
+ * Dodaje okienko pomiarowe do wizualizacji
+ */
+
 
 void NewWindow::on_lightButton_clicked()
 {
 
 
-    if(ui->lightSpinBox->value()>=25){
+    if(ui->lightSpinBox->value()>=25 || ui->lightSpinBox->value()<= 0){ /** Sprawdzenie czy wprowadzona wartość mieści się
+                                                                        w zakresie punktów pomiarowych pomieszczenia */
     QMessageBox msgBox; /**< Utworzenie okna dialogowego z informacją o wprowadzeniu wartości spoza zakresu */
           // Ustaw arkusz stylu
-    msgBox.setStyleSheet("QMessageBox { background-color: rgba(255, 255, 255, 0.5); "
+    msgBox.setStyleSheet("QMessageBox { background-color: rgba(255, 255, 255, 0.5); " /** Ustawienie arkusza stylów okna dialogowego*/
                                "border: 2px solid qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, "
                                "stop:0 rgba(175, 64, 255, 255), stop:0.5 rgba(91, 66, 243, 255), "
                                "stop:1 rgba(0, 221, 235, 255)); "
@@ -229,13 +243,15 @@ void NewWindow::on_lightButton_clicked()
                                "text-decoration: none; }");
 
           // Ustaw ikonę, tytuł i treść wiadomości
-          msgBox.setIcon(QMessageBox::Critical);
-          msgBox.setWindowTitle("Błąd");
-          msgBox.setText("Wartość niedozwolona!");
-          msgBox.exec();
+          msgBox.setIcon(QMessageBox::Critical); /** Ustawienie ikony krytycznej okna dialogowego */
+          msgBox.setWindowTitle("Błąd"); /** Ustawienie tytułu okna dialogowego*/
+          msgBox.setText("Wartość niedozwolona!"); /** Ustawienie treści okna dialogowego*/
+          msgBox.exec(); /** Wywołanie okna dialogowego */
+          hel = 0; /** Nadanie zmiennej przechowującej dane użytkownika wartości zerowej */
     }
-    hel=ui->lightSpinBox->value();
-
+    else {
+    hel=ui->lightSpinBox->value()-1;  /** Przetworzenie wartości wprowadzonej przez użytkownika*/
+    }
 
 }
 
@@ -253,37 +269,37 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 
     int j = static_cast<int>(hel);
     if(y<-15){
-        tempLabelVector[j]->setStyleSheet("background-color: #66e0ff;");
+        tempLabelVector[j]->setStyleSheet("background-color: #66e0ff;"); /** Ustawienie koloru #66e0ff okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<-5){
-        tempLabelVector[j]->setStyleSheet("background-color: #ccf5ff;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ccf5ff;"); /** Ustawienie koloru #ccf5ff okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<0){
-        tempLabelVector[j]->setStyleSheet("background-color: #e6ffe6;");
+        tempLabelVector[j]->setStyleSheet("background-color: #e6ffe6;"); /** Ustawienie koloru #e6ffe6 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<5){
-        tempLabelVector[j]->setStyleSheet("background-color: #aaff80;");
+        tempLabelVector[j]->setStyleSheet("background-color: #aaff80;"); /** Ustawienie koloru #aaff80 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<10){
-        tempLabelVector[j]->setStyleSheet("background-color: #77ff33;");
+        tempLabelVector[j]->setStyleSheet("background-color: #77ff33;"); /** Ustawienie koloru #77ff33 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<15){
-        tempLabelVector[j]->setStyleSheet("background-color: #ffff4d;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ffff4d;"); /** Ustawienie koloru #ffff4d okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<20){
-        tempLabelVector[j]->setStyleSheet("background-color: #ffff00;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ffff00;"); /** Ustawienie koloru #ffff00 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<25){
-        tempLabelVector[j]->setStyleSheet("background-color: #ff9933;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ff9933;"); /** Ustawienie koloru #ff9933 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<30){
-        tempLabelVector[j]->setStyleSheet("background-color: #ff8000c;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ff8000c;"); /** Ustawienie koloru #ff8000c okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else if(y<35){
-        tempLabelVector[j]->setStyleSheet("background-color: #ff471a;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ff471a;"); /** Ustawienie koloru #ff471a okna pomiarowego, zgodnie z przyjętą skalą*/
     }
     else {
-        tempLabelVector[j]->setStyleSheet("background-color: #ff3300;");
+        tempLabelVector[j]->setStyleSheet("background-color: #ff3300;"); /** Ustawienie koloru #ff3300 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
 
 

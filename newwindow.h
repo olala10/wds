@@ -70,10 +70,10 @@ private:
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
    Diagram *diagram;
 
-  void setupChart(){}; // prywatna metoda do ustawienia wykresu
+  void setupChart(){}; /**< Prywatna metoda do ustawiania wykresu */
   void updatePixmap();
-  double hel = 0;
-  double hel1 = 0;
+  double hel = 0; /**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru światła*/
+  double hel1 = 0;/**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru temperatury*/
 
 
 
@@ -84,11 +84,11 @@ private:
   double receivedTime=0, receivedDistance=2;
   double sendx =0, sendy=0;
   int w =0 , h =0;
-  QPixmap pixmapArray[9];
+  QPixmap pixmapArray[9]; /** Tablica pixmap wartości pomiaru odległości*/
 
   int flag = 0;
-  std::vector<QLabel*> labelVector;
-  std::vector<QLabel*> tempLabelVector;
+  std::vector<QLabel*> labelVector; /** Wektor obiektów label w groupboxie dla pomiaru światła*/
+  std::vector<QLabel*> tempLabelVector; /** Wektor obiektów label w groupboxie dla pomiaru temperatury*/
 
 
 
