@@ -56,24 +56,18 @@ public slots: //BK
 
 
 private slots:
-
-//    void setGreen();
-
-
-    void on_pushButtonTemperature_clicked();
     void on_lightButton_clicked();
 
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
-   Diagram *diagram;
    QChartView *QChartView;
   void setupChart(){}; /**< Prywatna metoda do ustawiania wykresu */
   double hel = 0; /**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru światła*/
   double hel1 = 0;/**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru temperatury*/
 
-
+  bool start = false;
 
   bool spacePicStatus = false;
   bool greenPicStatus = false;
@@ -84,7 +78,13 @@ private:
   int w =0 , h =0;
   QPixmap pixmapArray[9]; /** Tablica pixmap wartości pomiaru odległości*/
 
+  QStringList titles, lightTitles, distTitles; /** Tytuły kolumn temperatury i światła*/
   int flag = 0;
+
+  int row = 0, lightRow = 0, distRow=0; /** Początkowa ilość wierszy w tabeli */
+  QString timeTemp, timeLight, timeDist; /** Do wpisania do tabeli */
+  QString temp, light, dist; /** Do wpisania do tabeli */
+  QTime currentTime, currentLightTime, currentDistanceTime;
   std::vector<QLabel*> labelVector; /** Wektor obiektów label w groupboxie dla pomiaru światła*/
   std::vector<QLabel*> tempLabelVector; /** Wektor obiektów label w groupboxie dla pomiaru temperatury*/
 

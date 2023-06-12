@@ -175,6 +175,19 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
 
   qDebug()<<"Status: "<<distanceStatus<<'\n';
   }
+  ui->tableWidgetDistance->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
+  distTitles << "czas [s]" << "Odległość [cm]"; /** Dodanie tytułów kolumn do listy */
+  ui->tableWidgetDistance->setHorizontalHeaderLabels(distTitles); /** Dodanie tytułów kolumn do tabeli */
+  distRow = ui->tableWidgetDistance->rowCount(); /** Pobranie numeru następnego wiersza */
+
+      dist = QString::number(x); /** Konwersja wartości temperatury do string */
+
+      currentDistanceTime = QTime::currentTime(); /** Pobranie czasu pomiaru */
+
+      timeDist = currentDistanceTime.toString("hh:mm:ss.zzz"); /** Konwersja czasu pomiaru do string */
+      ui->tableWidgetDistance->insertRow(row); /** Dodanie kolejnego wiersza do Tabeli */
+      ui->tableWidgetDistance->setItem(row, 0, new QTableWidgetItem(timeDist)); /** Zapis wartości czasu pomiaru do tabeli */
+      ui->tableWidgetDistance->setItem(row, 1, new QTableWidgetItem(dist)); /** Zapis wartości temperatury do tabeli */
 }
 
 /*!
@@ -216,6 +229,21 @@ void NewWindow::receiveLightSensorData(double tSpace, double x){
 
 emit sendLightChartData(tSpace, x); /** Przesył danych o natężeniu światła do wykresu */
 
+
+    ui->tableWidgetLight->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
+    lightTitles << "czas [s]" << "Światło [lux]"; /** Dodanie tytułów kolumn do listy */
+    ui->tableWidgetLight->setHorizontalHeaderLabels(lightTitles); /** Dodanie tytułów kolumn do tabeli */
+    lightRow = ui->tableWidgetLight->rowCount(); /** Pobranie numeru następnego wiersza */
+
+        light = QString::number(x); /** Konwersja wartości temperatury do string */
+
+        currentLightTime = QTime::currentTime(); /** Pobranie czasu pomiaru */
+
+        timeLight = currentLightTime.toString("hh:mm:ss.zzz"); /** Konwersja czasu pomiaru do string */
+        ui->tableWidgetLight->insertRow(row); /** Dodanie kolejnego wiersza do Tabeli */
+        ui->tableWidgetLight->setItem(row, 0, new QTableWidgetItem(timeLight)); /** Zapis wartości czasu pomiaru do tabeli */
+        ui->tableWidgetLight->setItem(row, 1, new QTableWidgetItem(light)); /** Zapis wartości temperatury do tabeli */
+
 }
 
 /*!
@@ -250,6 +278,8 @@ void NewWindow::on_lightButton_clicked()
     else {
     hel=ui->lightSpinBox->value()-1;  /** Przetworzenie wartości wprowadzonej przez użytkownika*/
     }
+
+
 
 }
 
@@ -303,21 +333,23 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
     emit sendTemperatureChartData(tSpace,y);
 
 
+    ui->tableWidget->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
+    titles << "czas [s]" << "temperatura [°C]"; /** Dodanie tytułów kolumn do listy */
+    ui->tableWidget->setHorizontalHeaderLabels(titles); /** Dodanie tytułów kolumn do tabeli */
+    row = ui->tableWidget->rowCount(); /** Pobranie numeru następnego wiersza */
+
+        temp = QString::number(y); /** Konwersja wartości temperatury do string */
+
+        currentTime = QTime::currentTime(); /** Pobranie czasu pomiaru */
+
+        timeTemp = currentTime.toString("hh:mm:ss.zzz"); /** Konwersja czasu pomiaru do string */
+        ui->tableWidget->insertRow(row); /** Dodanie kolejnego wiersza do Tabeli */
+        ui->tableWidget->setItem(row, 0, new QTableWidgetItem(timeTemp)); /** Zapis wartości czasu pomiaru do tabeli */
+        ui->tableWidget->setItem(row, 1, new QTableWidgetItem(temp)); /** Zapis wartości temperatury do tabeli */
+
+
+
 }
-
-
-
-
-void NewWindow::on_pushButtonTemperature_clicked()
-{
-       // diagram = new Diagram(this);
-
-
-
-}
-
-
-
 
 
 

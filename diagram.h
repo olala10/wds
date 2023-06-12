@@ -37,6 +37,7 @@ public:
     void addPoint(double x, double y); /**< Funkcja dodająca wartości pomiaru temperatury do wektora */
     void addLightPoint(double x, double y);  /**< Funkcja dodająca wartości pomiaru światła do wektora */
     void clearData(); /**< Usuwanie wartości z diagramu */
+    void clearLightData(); /** Usuwanie wartości z diagramu natężenia światła */
     void plot(); /**< Rysowanie wykresu */
     void plotLight(); /** Rysowanie wykresu natężenia światła */
 public slots:
@@ -49,6 +50,10 @@ private slots:
     void on_pushButtonClear_clicked();
 
 
+
+    void on_pushButtonAddLight_clicked();
+
+    void on_pushButtonClearLight_clicked();
 
 private:
     Ui::Diagram *ui; /**< Wskaźnik na interfejs użytkownika (UI) */

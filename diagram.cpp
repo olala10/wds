@@ -66,12 +66,24 @@ void Diagram::addLightPoint(double x, double y)
 
 /*!
  * \brief Definicja metody clearData
+ * Usuwanie wartości z wykresu temperatury
  *
  */
 void Diagram::clearData()
 {
     qv_x.clear();
     qv_y.clear();
+}
+
+/*!
+ * \brief Diagram::clearLightData
+ * Usuwanie wartości z wykresu natężenia światła
+ */
+
+void Diagram::clearLightData()
+{
+    qv_xL.clear();
+    qv_yL.clear();
 }
 
 /*!
@@ -108,6 +120,20 @@ void Diagram::on_pushButtonAdd_clicked()
 }
 
 /*!
+ * \brief Definicja metody on_pushButtonAddLight_clicked()
+ * Dodaje punkt kontrolny do wykresu
+ * \param bx_xLight -- wartość x wprowadzona przez użytkownika
+ * \param bx_yLight -- wartość y wprowadzona przez użytkownika
+ */
+
+
+void Diagram::on_pushButtonAddLight_clicked()
+{
+    addLightPoint(ui->bx_xLight->value(),ui->bx_yLight->value());
+    plotLight();
+}
+
+/*!
  * \brief Definicja metody on_pushButtonClear_clicked()
  * Usuwa zawartość wykresu
  */
@@ -116,6 +142,17 @@ void Diagram::on_pushButtonClear_clicked()
 {
     clearData();
     plot();
+}
+
+/*!
+ * \brief Diagram::on_pushButtonClearLight_clicked
+ * Usuwa zawartość wykresu natężenia światła
+ */
+
+void Diagram::on_pushButtonClearLight_clicked()
+{
+    clearLightData();
+    plotLight();
 }
 
 /*!
@@ -144,5 +181,10 @@ void Diagram::receiveLightChartData(double t, double y)
 //    qDebug()<<"Chart time: "<<t<<'/n';
 //    qDebug()<<"Chart light: "<<y<<'/n';
 }
+
+
+
+
+
 
 

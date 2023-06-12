@@ -11,6 +11,8 @@
 #include <QApplication>///< Dołączenie pliku nagłówkowego klasy QApplication.
 
 
+
+
 /**
  * @brief Punkt wejścia aplikacji.
  *
@@ -24,6 +26,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);///< Inicjalizacja obiektu QApplication
     MainWindow mainWindow;///< Utworzenie obiektu klasy MainWindow.
     NewWindow newWindow;  ///< Utworzenie obiektu klasy NewWindow.
+
 
     Diagram diagram;
     QObject::connect(&mainWindow, SIGNAL(sendSpaceSensorData(double,double)), &newWindow, SLOT(receiveSpaceSensorData(double,double)));
