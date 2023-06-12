@@ -11,19 +11,22 @@ Diagram::Diagram(QWidget *parent) :
     ui(new Ui::Diagram)
 {
     ui->setupUi(this);
+
     ui->plot->addGraph();
     ui->plot->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
     ui->plot->graph(0)->setLineStyle(QCPGraph::lsNone);
     ui->plot->xAxis->setLabel("Czas[s]");
     ui->plot->yAxis->setLabel("Pomiar");
-//   connect(parent, SIGNAL(sendData(double,double)), this, SLOT(receiveData(double,double))); /**< Łączenie sygnału, gdzie 1 i 3
-  //to obiekty okien, między którymi przesyłane są dane a 2 i 4 składowa to nazwy sygnału i slotu, które mają być połączone*/
-
- // connect(parent, SIGNAL(sendTemperatureChartData(double, double )), this, SLOT(receiveTemperatureChartData(double,double)));
-   //connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double,double)));
+//    ui->plot->setBackground(QBrush(QColor(255, 255, 255, 0.5)));
 
 
-//    connect(this, SIGNAL(sendTemperatureChartData(double, double)), diagram, SLOT(receiveTemperatureChartData(double, double)));
+    ui->plot_light->addGraph();
+    ui->plot_light->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
+    ui->plot_light->graph(0)->setLineStyle(QCPGraph::lsNone);
+    ui->plot_light->xAxis->setLabel("Czas[s]");
+    ui->plot_light->yAxis->setLabel("Pomiar");
+
+
 }
 
 
@@ -37,15 +40,29 @@ Diagram::~Diagram()
 }
 
 /*!
- * \brief Definicja metody addPoint
- * Dodaje x i y
+ * \brief Definicja metody addPoint -- dodaje wartości pomiarowe do wektora wartości temperatury
+ * \param x -- czas pomiaru
+ * \param y -- wartość temperatury
  */
 void Diagram::addPoint(double x, double y)
 {
-    qv_x.append(x);
-    qv_y.append(y);
+    qv_x.append(x); /** dodawanie do wektora czasu*/
+    qv_y.append(y); /** dodawanie do wektora temperatury*/
 
 }
+
+/*!
+ * \brief Diagram::addLightPoint -- dodaje wartości pomiarowe do wektora wartości pomiaru światła
+ * \param x -- czas pomiaru
+ * \param y -- wartość natężenia światła
+ */
+
+void Diagram::addLightPoint(double x, double y)
+{
+    qv_xL.append(x); /** dodawanie do wektora czasu*/
+    qv_yL.append(y); /** dodawanie do wektora natężenia światła */
+}
+
 
 /*!
  * \brief Definicja metody clearData
@@ -66,8 +83,16 @@ void Diagram::plot()
     ui->plot->graph(0)->setData(qv_x, qv_y); /**< Ustawianie danych do wykresu */
     ui->plot->graph(0)->rescaleAxes(true); /**< Automatyczne skalowanie wykresu */
     ui->plot->replot(); /**< Dorysowywanie elementów*/
-    ui->plot->update(); /**< Aktualizowanie rysunku */
+    ui->plot->update(); /**< Aktualizowanie wykresu */
+}
 
+void Diagram::plotLight()
+{
+
+    ui->plot_light->graph(0)->setData(qv_xL, qv_yL); /** Ustawianie danych do wykresu */
+    ui->plot_light->graph(0)->rescaleAxes(true); /** Automatyczne skalowanie wykresu */
+    ui->plot_light->replot(); /** Dodawanie elementów */
+    ui->plot_light->update(); /** Aktualizowanie wykresu */
 }
 
 /*!
@@ -94,23 +119,30 @@ void Diagram::on_pushButtonClear_clicked()
 }
 
 /*!
- * \brief Definicja metody receiveData, przyjmująca wartości x i var
- * metoda dodaje je do wykresu i wywołuje metodę plot
+ * \brief Diagram::receiveTemperatureChartData -- odbiera dane o temperaturze
+ * \param t -- czas zebrania pomiaru
+ * \param y -- wartość zmierzona
  */
-
-//void Diagram::receiveData(double x, double variable)
-//{
-//    addPoint(x, variable);
-//    plot();
-//}
-
 
 void Diagram::receiveTemperatureChartData(double t, double y)
 {
     addPoint(t, y);
     plot();
-    qDebug()<<t<<'/n';
-    qDebug()<<y<<'/n';
+    qDebug()<<"Chart time: "<<t<<'/n';
+    qDebug()<<"Chart temperature: "<<y<<'/n';
+}
+/*!
+ * \brief receiveLightChartData -- odbiera dane o rozkładzie natężenia światła
+ * \param t -- czas zebrania pomiaru
+ * \param y -- wartość zmierzona
+ */
+
+void Diagram::receiveLightChartData(double t, double y)
+{
+    addLightPoint(t,y);
+    plotLight();
+//    qDebug()<<"Chart time: "<<t<<'/n';
+//    qDebug()<<"Chart light: "<<y<<'/n';
 }
 
 

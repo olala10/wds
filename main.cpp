@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);///< Inicjalizacja obiektu QApplication
     MainWindow mainWindow;///< Utworzenie obiektu klasy MainWindow.
     NewWindow newWindow;  ///< Utworzenie obiektu klasy NewWindow.
+
     Diagram diagram;
     QObject::connect(&mainWindow, SIGNAL(sendSpaceSensorData(double,double)), &newWindow, SLOT(receiveSpaceSensorData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru odległości
@@ -34,11 +35,18 @@ int main(int argc, char *argv[])
     QObject::connect(&mainWindow, SIGNAL(sendLightSensorData(double,double)), &newWindow, SLOT(receiveLightSensorData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru natężenia światła z mainwindow do newindow
 
-    //QObject::connect(&newWindow, SIGNAL(sendTemperatureChartData(double,double)), &diagram, SLOT(receiveTemperatureChartData(double,double)));
+    QObject::connect(&newWindow, SIGNAL(sendTemperatureChartData(double,double)), &diagram, SLOT(receiveTemperatureChartData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru temperatury
+
+    QObject::connect(&newWindow, SIGNAL(sendLightChartData(double,double)), &diagram, SLOT(receiveLightChartData(double,double)));
+    ///< Połączenie przesyłu danych dla pomiaru natężenia światła
+
     mainWindow.SetNewWindow(&newWindow); //BK
     mainWindow.show();///< Wywołanie metody show() na obiekcie MainWindow.
     newWindow.show(); //BK
+    newWindow.setFixedSize(1020, 600);
+    diagram.show();
+    diagram.setFixedSize(1167, 500);
     return a.exec();///< Uruchomienie pętli głównej aplikacji.
 
 }

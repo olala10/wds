@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->thread = new QThread;
     this->newWindow = new NewWindow;
 
-    setupChart(); // wywołanie metody do ustawienia wykresu
+ //   setupChart(); // wywołanie metody do ustawienia wykresu
 }
 /*!
  * \brief Destruktor klasy MainWindow.

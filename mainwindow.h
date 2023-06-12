@@ -105,8 +105,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;/**< Wskaźnik na interfejs użytkownika (UI) */
-    QChartView *QChartView;
-    void setupChart(){}; // prywatna metoda do ustawienia wykresu
+  //  QChartView *QChartView;
+ //   void setupChart(){}; // prywatna metoda do ustawienia wykresu
     void addToLogs(QString message);/**< Metoda do dodawania wiadomości do logów
                                     * @param message Wiadomość do dodania do logów
                                     */

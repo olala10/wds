@@ -34,27 +34,27 @@ public:
          */
     ~Diagram();
 
-    void addPoint(double x, double y); /**< Funkcja dodająca wartości  */
+    void addPoint(double x, double y); /**< Funkcja dodająca wartości pomiaru temperatury do wektora */
+    void addLightPoint(double x, double y);  /**< Funkcja dodająca wartości pomiaru światła do wektora */
     void clearData(); /**< Usuwanie wartości z diagramu */
     void plot(); /**< Rysowanie wykresu */
+    void plotLight(); /** Rysowanie wykresu natężenia światła */
 public slots:
-     void receiveTemperatureChartData(double t, double y); /**< Slot odczytu danych  do wykresu */
+     void receiveTemperatureChartData(double t, double y); /**< Slot odczytu danych o temperaturze do wykresu */
+     void receiveLightChartData(double t, double y); /** Slot do odczytu danych o natężeniu światła do wykresu */
 
 private slots:
     void on_pushButtonAdd_clicked();
 
     void on_pushButtonClear_clicked();
 
-//    void receiveData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
 
-//    void receiveSpaceData(double x, double variable); /**< Otrzymywanie danych, gdzie x-czas odczytu, variable - wartość pomiaru */
-
- //   void receiveTemperatureChartData(double t, double y); /**< Slot odczytu danych  do wykresu */
 
 private:
     Ui::Diagram *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
 
-    QVector <double> qv_x, qv_y;
+    QVector <double> qv_x, qv_y; /** Wektor przechowujący czas i wartość pomiaru temperatury */
+    QVector <double> qv_xL, qv_yL; /** Wektor przechowujący czas i wartość pomiaru światła*/
 };
 
 #endif // DIAGRAM_H

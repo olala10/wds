@@ -46,7 +46,8 @@ public:
 
 signals:
     void sendSpaceData(double x, double y);
-    void sendTemperatureChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
+    void sendTemperatureChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu pomiaru temperatury */
+    void sendLightChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu natężenia światła*/
 
 public slots: //BK
     void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
@@ -60,18 +61,15 @@ private slots:
 
 
     void on_pushButtonTemperature_clicked();
-
-
-
     void on_lightButton_clicked();
+
 
 private:
   Ui::NewWindow *ui; /**< Wskaźnik na interfejs użytkownika (UI) */
   std::vector <float> floatData; /**< Wektor do przechowywania odczytanych danych typu float */
    Diagram *diagram;
-
+   QChartView *QChartView;
   void setupChart(){}; /**< Prywatna metoda do ustawiania wykresu */
-  void updatePixmap();
   double hel = 0; /**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru światła*/
   double hel1 = 0;/**< Zmienna przechowująca wartość doubleboxa, wykorzystywana to ustawienia pomiaru temperatury*/
 

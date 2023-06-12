@@ -19,6 +19,7 @@ NewWindow::NewWindow(QWidget *parent)
 
 
 
+
     setupChart(); // wywołanie metody do ustawienia wykresu
     int w =350, h = 350;
 
@@ -185,12 +186,9 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
 
 void NewWindow::receiveLightSensorData(double tSpace, double x){
 
-//    hel = ui->lightSpinBox->value();
+//    qDebug()<<"Received lux: "<<x<<'\n';
 
-//    labelVector[7]->setStyleSheet("background-color: red;");
-    qDebug()<<"Received lux: "<<x<<'\n';
-
-    qDebug()<<"Doublebox: "<<hel<<'\n';
+//    qDebug()<<"Doublebox: "<<hel<<'\n';
 
     int j = static_cast<int>(hel); /** przypisanie zmiennej j wartości hel*/
     if (x < 10) {
@@ -216,7 +214,7 @@ void NewWindow::receiveLightSensorData(double tSpace, double x){
     }
 
 
-
+emit sendLightChartData(tSpace, x); /** Przesył danych o natężeniu światła do wykresu */
 
 }
 
@@ -302,16 +300,18 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
         tempLabelVector[j]->setStyleSheet("background-color: #ff3300;"); /** Ustawienie koloru #ff3300 okna pomiarowego, zgodnie z przyjętą skalą*/
     }
 
-
-   sendx=tSpace;
-   sendy=y;
+    emit sendTemperatureChartData(tSpace,y);
 
 
 }
 
 
+
+
 void NewWindow::on_pushButtonTemperature_clicked()
 {
+       // diagram = new Diagram(this);
+
 
 
 }
