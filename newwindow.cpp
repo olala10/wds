@@ -82,6 +82,21 @@ NewWindow::NewWindow(QWidget *parent)
     ui->redPic2->setVisible(false);  /**< Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna */
     ui->redPic3->setVisible(false);  /**< Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna */
 
+    pixmapCompass[0] = QPixmap ("C:/Users/Acer/Documents/wds/wds/arrowNorth.png");
+    pixmapCompass[1] = QPixmap ("C:/Users/Acer/Documents/wds/wds/arrowEast.png");
+    pixmapCompass[2] = QPixmap ("C:/Users/Acer/Documents/wds/wds/arrowSouth.png");
+    pixmapCompass[3] = QPixmap ("C:/Users/Acer/Documents/wds/wds/arrowWest.png");
+    ui->labelArrowNorth->setPixmap(pixmapCompass[0].scaled(ui->labelArrowNorth->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation ));/**< Przypisanie pixmapy do label */
+    ui->labelArrowEast->setPixmap(pixmapCompass[1].scaled(ui->labelArrowEast->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation ));/**< Przypisanie pixmapy do label */
+    ui->labelArrowSouth->setPixmap(pixmapCompass[2].scaled(ui->labelArrowSouth->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation ));/**< Przypisanie pixmapy do label */
+    ui->labelArrowWest->setPixmap(pixmapCompass[3].scaled(ui->labelArrowWest->size(),Qt::KeepAspectRatio, Qt::SmoothTransformation ));/**< Przypisanie pixmapy do label */
+
+    ui->labelArrowNorth->setVisible(false);
+    ui->labelArrowEast->setVisible(false);
+    ui->labelArrowSouth->setVisible(false);
+    ui->labelArrowWest->setVisible(false);
+
+
 
     QGroupBox* lightBox = ui->lightBox; /**< Utworzenie wskaźnika na groupbox z etykietami dotyczącymi natężenia świtała */
 
@@ -283,7 +298,11 @@ void NewWindow::on_lightButton_clicked()
 
 }
 
-
+/*!
+ * \brief NewWindow::receiveTemperatureSensorData -- odbiera dane pomiarowe o temperaturze
+ * \param tSpace -- czas pomiaru w sekundach
+ * \param y -- wartość zmierzona
+ */
 
 
 
@@ -349,6 +368,46 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 
 
 
+}
+
+/*!
+ * \brief NewWindow::receiveCompassSensorData -- odbiera dane z magnetometru
+ * \param tSpace -- czas pomiaru w sekundach
+ * \param x -- kierunek wskazany przez kompas
+ */
+
+void NewWindow::receiveCompassSensorData(double tSpace, QString x){
+    qDebug()<<"Compass: "<<x<<'\n';
+    if(x == "N"){
+        ui->labelArrowNorth->setVisible(true); /**< Ustawienie widzialności strzałki odpowiadającej kierunkowi północnemu */
+        ui->labelArrowEast->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+        ui->labelArrowSouth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+        ui->labelArrowWest->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    }
+    else if(x == "E"){
+    ui->labelArrowNorth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowEast->setVisible(true); /**< Ustawienie widzialności strzałki odpowiadającej kierunkowi wschodniemu */
+    ui->labelArrowSouth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowWest->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    }
+    else if(x == "S"){
+    ui->labelArrowNorth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowEast->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowSouth->setVisible(true);  /**< Ustawienie widzialności strzałki odpowiadającej kierunkowi południowemu */
+    ui->labelArrowWest->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    }
+    else if(x == "W"){
+    ui->labelArrowNorth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowEast->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowSouth->setVisible(false); /**< Zanik strzałki sprzecznej ze wskazaniem */
+    ui->labelArrowWest->setVisible(true);  /**< Ustawienie widzialności strzałki odpowiadającej kierunkowi wschodniemu */
+    }
+    else {
+    ui->labelArrowNorth->setVisible(false); /**< Zanik strzałek w przypadku braku wskazań */
+    ui->labelArrowEast->setVisible(false); /**< Zanik strzałek w przypadku braku wskazań */
+    ui->labelArrowSouth->setVisible(false); /**< Zanik strzałek w przypadku braku wskazań */
+    ui->labelArrowWest->setVisible(false); /**< Zanik strzałek w przypadku braku wskazań */
+    }
 }
 
 

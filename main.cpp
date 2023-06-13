@@ -44,6 +44,9 @@ int main(int argc, char *argv[])
     QObject::connect(&newWindow, SIGNAL(sendLightChartData(double,double)), &diagram, SLOT(receiveLightChartData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru natężenia światła
 
+    QObject::connect(&mainWindow, SIGNAL(sendCompasSensorData(double,QString)), &newWindow, SLOT(receiveCompassSensorData(double,QString)));
+    ///< Połączenie przesyłu danych dla pomiarów z magnetometru
+
     mainWindow.SetNewWindow(&newWindow); //BK
     mainWindow.show();///< Wywołanie metody show() na obiekcie MainWindow.
     newWindow.show(); //BK

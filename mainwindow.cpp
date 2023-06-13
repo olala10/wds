@@ -181,20 +181,21 @@ QByteArray SimulateReceiver()
 
 
   const char *Data[] {
-      "1#3#0#50#60",
-      "20#2000#4#50#60",
-      "30#300#100#50#60",
-      "40#30#300#50#60",
-      "50#340#250#50#60",
-      "60#3050#50#50#60",
-      "70#130#40#50#60",
-      "3#30#6#50#60",
-      "21#3#40#50#60",
-      "7#3#30#5#60",
-      "40#1000#40#50#60",
-      "10#100#0#50#60",
-      "20#240#4#50#60",
-      "30#30#100#50#60",
+      "start#3#2#N#18#",
+       "start#13#20#S#18#",
+       "start#32#200#W#18#",
+       "start#3#2#E#18#",
+//      "40#30#300#50#60",
+//      "50#340#250#50#60",
+//      "60#3050#50#50#60",
+//      "70#130#40#50#60",
+//      "3#30#6#50#60",
+//      "21#3#40#50#60",
+//      "7#3#30#5#60",
+//      "40#1000#40#50#60",
+//      "10#100#0#50#60",
+//      "20#240#4#50#60",
+//      "30#30#100#50#60",
             nullptr
           };
 
@@ -245,24 +246,27 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
                     QStringList values = strData.split('#');
                     if (values.size() >= 6) {
-                        distance = values[1].trimmed().toDouble();
-                        light = values[2].trimmed().toDouble();
-                        temperature = values[3].trimmed().toDouble();
+                        distance = values[2].trimmed().toDouble();
+                        light = values[3].trimmed().toDouble();
+                        compassDirection = values[4].trimmed();
+                        temperature = values[5].trimmed().toDouble();
+
+
 
                         emit sendSpaceSensorData(secTimer, distance);
                         emit sendLightSensorData(secTimer, light);
+                        emit sendCompasSensorData(secTimer, compassDirection);
                         emit sendTemperatureSensorData(secTimer, temperature);
 
 //                        qDebug() << "Distance: " << distance;
 //                        qDebug() << "Light: " << light;
+//                        qDebug()<<"Compass direction: "<<compassDirection<<'\n';
 //                        qDebug() << "Temperature: " << temperature;
                     }
 
                     ui->textEditData->append(strData);
                 }
             }
-
-
         }
 
         qApp->processEvents();

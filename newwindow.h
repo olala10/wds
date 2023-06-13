@@ -50,9 +50,10 @@ signals:
     void sendLightChartData(double x, double variable); /**< Sygnał do emisji danych do wykresu natężenia światła*/
 
 public slots: //BK
-    void receiveSpaceSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika odległości */
-    void receiveLightSensorData(double tSpace, double x); /**< Sygnał do odbioru danych z czujnika światła */
-    void receiveTemperatureSensorData(double tSpace, double y); /**< Sygnał do odbioru danych z czujnika temperatury */
+    void receiveSpaceSensorData(double tSpace, double x); /**< Slot do odbioru danych z czujnika odległości */
+    void receiveLightSensorData(double tSpace, double x); /**< Slot do odbioru danych z czujnika światła */
+    void receiveTemperatureSensorData(double tSpace, double y); /**< Slot do odbioru danych z czujnika temperatury */
+    void receiveCompassSensorData(double tSpace, QString x); /** Slot do odbioru danych z magnetometru*/
 
 
 private slots:
@@ -76,7 +77,8 @@ private:
   double receivedTime=0, receivedDistance=2;
   double sendx =0, sendy=0;
   int w =0 , h =0;
-  QPixmap pixmapArray[9]; /** Tablica pixmap wartości pomiaru odległości*/
+  QPixmap pixmapArray[9]; /** Tablica pixmap przechowująca wartości pomiaru odległości*/
+  QPixmap pixmapCompass[4]; /** Tablica pixmap przechowująca odczyty z kompasu */
 
   QStringList titles, lightTitles, distTitles; /** Tytuły kolumn temperatury i światła*/
   int flag = 0;

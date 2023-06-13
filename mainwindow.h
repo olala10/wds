@@ -58,8 +58,9 @@ signals:
     void sendData(double x, double variable); /**< Sygnał do emisji danych do wykresu */
     void sendSpaceSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika odległości */
     void sendLightSensorData(double tSpace, double x); /**< Sygnał do emisji danych z czujnika światła */
-    void sendCompasSensorData(double tSpace); /**< Sygnał do emisji danych z magnetometru */
+    void sendCompasSensorData(double tSpace, QString x); /**< Sygnał do emisji danych z magnetometru */
     void sendTemperatureSensorData(double tSpace, double y); /**< Sygnał do emisji danych z czujnika temperatury */
+
 
 
 
@@ -125,7 +126,7 @@ private:
     double secTimer = 0; // do odliczania - poprawić to
     double distance =0 ;
     double light = 0;
-    QString compass;
+    QString compass, compassDirection;
     double temperature = 0;
 
 };

@@ -46,14 +46,14 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: none;
+     <string notr="true">  border: none;
 background: none;</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="labelArrow">
+   <widget class="QLabel" name="labelArrowNorth">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -63,7 +63,58 @@ background: none;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border:none;
+     <string notr="true">  border: none;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelArrowEast">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>120</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  border: none;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelArrowSouth">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>140</y>
+      <width>16</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  border: none;
+background: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelArrowWest">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  border: none;
 background: none;</string>
     </property>
     <property name="text">
@@ -1038,9 +1089,9 @@ border: none;</string>
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>10</y>
+     <y>40</y>
      <width>231</width>
-     <height>281</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1058,9 +1109,9 @@ border: none;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>10</y>
       <width>211</width>
-      <height>241</height>
+      <height>231</height>
      </rect>
     </property>
    </widget>
@@ -1370,9 +1421,9 @@ padding: 4px;</string>
   <widget class="QLabel" name="label_29">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>290</x>
      <y>10</y>
-     <width>491</width>
+     <width>731</width>
      <height>31</height>
     </rect>
    </property>
