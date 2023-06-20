@@ -1,0 +1,130 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_ab62e61a8d803001b2561b514e1b49485}{open\+Device}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a622a62146268334b99742f18b9060460}{close\+Device}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a26dea8ac06aa405f449398642b1d4183}{send\+Data}} (double x, double variable)
+\item 
+void \mbox{\hyperlink{class_main_window_ae8b76c5224d95125322a413fb0bbbbb0}{send\+Space\+Sensor\+Data}} (double t\+Space, double x)
+\item 
+void \mbox{\hyperlink{class_main_window_ae244b3172c794492ea790f797d4f6af3}{send\+Light\+Sensor\+Data}} (double t\+Space, double x)
+\item 
+void \mbox{\hyperlink{class_main_window_aabcf292cc135f8e8691746c2e6d0cab3}{send\+Compas\+Sensor\+Data}} (double t\+Space, QString x)
+\item 
+void \mbox{\hyperlink{class_main_window_ab11e339d21ff525da59a71e4e44ee2cd}{send\+Temperature\+Sensor\+Data}} (double t\+Space, double y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_main_window}{Main\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \mbox{\hyperlink{class_main_window}{Main\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_ae19f0e0acd4314c28d3a70e7487bb69a}\label{class_main_window_ae19f0e0acd4314c28d3a70e7487bb69a}} 
+void {\bfseries Set\+New\+Window} (\mbox{\hyperlink{class_new_window}{New\+Window}} $\ast$p\+Win)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class. 
+
+Klasa reprezentująca główne okno aplikacji. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{class_main_window}{Main\+Window}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na rodzica okna (domyślnie nullptr)\\
+\hline
+{\em parent} & Wskaźnik na rodzica okna. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \mbox{\hyperlink{class_main_window}{Main\+Window}}. 
+
+Destruktor klasy \mbox{\hyperlink{class_main_window}{Main\+Window}}. Zwalnia pamięć zajętą przez interfejs użytkownika. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a622a62146268334b99742f18b9060460}\label{class_main_window_a622a62146268334b99742f18b9060460}} 
+\index{MainWindow@{MainWindow}!closeDevice@{closeDevice}}
+\index{closeDevice@{closeDevice}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closeDevice}{closeDevice}}
+{\footnotesize\ttfamily void Main\+Window\+::close\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał zamykający komunikację z urządzeniem \mbox{\Hypertarget{class_main_window_ab62e61a8d803001b2561b514e1b49485}\label{class_main_window_ab62e61a8d803001b2561b514e1b49485}} 
+\index{MainWindow@{MainWindow}!openDevice@{openDevice}}
+\index{openDevice@{openDevice}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{openDevice}{openDevice}}
+{\footnotesize\ttfamily void Main\+Window\+::open\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał otwierający komunikację z urządzeniem \mbox{\Hypertarget{class_main_window_aabcf292cc135f8e8691746c2e6d0cab3}\label{class_main_window_aabcf292cc135f8e8691746c2e6d0cab3}} 
+\index{MainWindow@{MainWindow}!sendCompasSensorData@{sendCompasSensorData}}
+\index{sendCompasSensorData@{sendCompasSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sendCompasSensorData}{sendCompasSensorData}}
+{\footnotesize\ttfamily void Main\+Window\+::send\+Compas\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{QString}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych z magnetometru \mbox{\Hypertarget{class_main_window_a26dea8ac06aa405f449398642b1d4183}\label{class_main_window_a26dea8ac06aa405f449398642b1d4183}} 
+\index{MainWindow@{MainWindow}!sendData@{sendData}}
+\index{sendData@{sendData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sendData}{sendData}}
+{\footnotesize\ttfamily void Main\+Window\+::send\+Data (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{variable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych do wykresu \mbox{\Hypertarget{class_main_window_ae244b3172c794492ea790f797d4f6af3}\label{class_main_window_ae244b3172c794492ea790f797d4f6af3}} 
+\index{MainWindow@{MainWindow}!sendLightSensorData@{sendLightSensorData}}
+\index{sendLightSensorData@{sendLightSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sendLightSensorData}{sendLightSensorData}}
+{\footnotesize\ttfamily void Main\+Window\+::send\+Light\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych z czujnika światła \mbox{\Hypertarget{class_main_window_ae8b76c5224d95125322a413fb0bbbbb0}\label{class_main_window_ae8b76c5224d95125322a413fb0bbbbb0}} 
+\index{MainWindow@{MainWindow}!sendSpaceSensorData@{sendSpaceSensorData}}
+\index{sendSpaceSensorData@{sendSpaceSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sendSpaceSensorData}{sendSpaceSensorData}}
+{\footnotesize\ttfamily void Main\+Window\+::send\+Space\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych z czujnika odległości \mbox{\Hypertarget{class_main_window_ab11e339d21ff525da59a71e4e44ee2cd}\label{class_main_window_ab11e339d21ff525da59a71e4e44ee2cd}} 
+\index{MainWindow@{MainWindow}!sendTemperatureSensorData@{sendTemperatureSensorData}}
+\index{sendTemperatureSensorData@{sendTemperatureSensorData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{sendTemperatureSensorData}{sendTemperatureSensorData}}
+{\footnotesize\ttfamily void Main\+Window\+::send\+Temperature\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych z czujnika temperatury 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

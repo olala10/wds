@@ -45,7 +45,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonSearch_clicked()
 {
-    this -> addToLogs("Szukam urządzeń...");
+    this -> addToLogs(tr("Szukam urządzeń..."));
     QList<QSerialPortInfo> devices;
     devices = QSerialPortInfo::availablePorts();
 
@@ -95,7 +95,7 @@ void MainWindow::addToRead(QString message)
 void MainWindow::on_pushButtonConnect_clicked()
 {
     if(ui->comboBoxDevices->count() == 0){
-        this->addToLogs("Nie wykryto urządzeń");
+        this->addToLogs(tr("Nie wykryto urządzeń"));
         return;
     }
 
@@ -115,15 +115,15 @@ void MainWindow::on_pushButtonConnect_clicked()
           this->device->setStopBits(QSerialPort::OneStop); /**< Ustawienie jednego bitu stopu */
           this->device->setFlowControl(QSerialPort::NoFlowControl);
 
-        this->addToLogs("Port szeregowy został otwarty"); /**< Dodanie komunikatu do logów informującego o otwarciu portu szeregowego */
+        this->addToLogs(tr("Port szeregowy został otwarty")); /**< Dodanie komunikatu do logów informującego o otwarciu portu szeregowego */
 
     }
     else{
-        this->addToLogs("Port szeregowy nie został otwarty"); /**< Dodanie komunikatu do logów informującego o nieudanym otwarciu portu szeregowego */
+        this->addToLogs(tr("Port szeregowy nie został otwarty")); /**< Dodanie komunikatu do logów informującego o nieudanym otwarciu portu szeregowego */
     }
   }
     else{
-        this->addToLogs("Port został już otwarty");/**< Dodanie komunikatu do logów informującego o już otwartym porcie szeregowym */
+        this->addToLogs(tr("Port został już otwarty"));/**< Dodanie komunikatu do logów informującego o już otwartym porcie szeregowym */
     }
 }
 
@@ -138,7 +138,7 @@ void MainWindow::readFromPort()
     while(this->device->canReadLine()){/**< Odczyt danych z portu szeregowego linia po linii */
         QString line = this->device->readLine();/**< Odczyt jednej linii danych z portu */
 
-//        QString terminator = "\r";/**< Separator linii */
+//        QString terminator = "\r"; /**<  Separator linii */
         QString terminator = "\n";/**< Separator linii */
         int pos = line.lastIndexOf(terminator);/**< Znalezienie pozycji separatora */
 
@@ -151,13 +151,13 @@ void MainWindow::readFromPort()
 
 void MainWindow::on_pushButtonDisconnect_clicked()
 {
-    if(this->device->isOpen()){// Sprawdzenie, czy port jest otwarty
-        this->device->close();// Zamknięcie portu
-        this->addToLogs("Rozłączono");// Dodanie komunikatu do logów informującego o rozłączeniu portu
+    if(this->device->isOpen()){/**< Sprawdzenie, czy port jest otwarty */
+        this->device->close();/**<  Zamknięcie portu */
+        this->addToLogs(tr("Rozłączono"));/**<  Dodanie komunikatu do logów informującego o rozłączeniu portu */
     }
     else
        {
-           this->addToLogs("Port nie jest otwarty!");// Dodanie komunikatu do logów informującego o próbie rozłączenia nieotwartego portu
+           this->addToLogs(tr("Port nie jest otwarty!"));/**<  Dodanie komunikatu do logów informującego o próbie rozłączenia nieotwartego portu */
            return;
        }
 
@@ -232,7 +232,7 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
     QByteArray data;
     while (_Start) {
-//        data = this->device->readAll();
+//        data = this->device->readAll();  //DO ZMIANY!!!!!!
         data =  SimulateReceiver();
 
         if (!data.isEmpty()) {

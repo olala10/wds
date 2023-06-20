@@ -1,0 +1,55 @@
+\hypertarget{diagram_8h_source}{}\doxysection{diagram.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCharts>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QChartView>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QLineSeries>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPoint>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram}{Diagram}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram}{Diagram}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_diagram}{Diagram}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_diagram_ab91100b12241a3b33886121bcb664524}{\string~Diagram}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a80993ce985bb2a61afd80bf01f9cba20}{addPoint}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}{addLightPoint}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_af3becba96c9a867394ba88391c86ffd3}{clearData}}();\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_ab4575dedbbdf5db9e0ce13d0ccf3d4f4}{clearLightData}}();\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a5c61cef2972ec751e44d96ba5f01f862}{plot}}();\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_abc674f74960bcaee4540ffa28f29bc20}{plotLight}}();\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}{receiveTemperatureChartData}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_a691cc8432dbd0e246ff017871c1942f2}{receiveLightChartData}}(\textcolor{keywordtype}{double}\ t,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonAdd\_clicked();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClear\_clicked();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonAddLight\_clicked();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClearLight\_clicked();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ Ui::Diagram\ *ui;\ }
+\DoxyCodeLine{00061\ \ \ \ \ QVector\ <double>\ qv\_x,\ qv\_y;\ }
+\DoxyCodeLine{00062\ \ \ \ \ QVector\ <double>\ qv\_xL,\ qv\_yL;\ }
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAM\_H}}
+
+\end{DoxyCode}

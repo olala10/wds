@@ -1,0 +1,80 @@
+\hypertarget{newwindow_8h_source}{}\doxysection{newwindow.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NEWWINDOW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NEWWINDOW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<QMainWindow>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTableView>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTableWidget>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QStandardItemModel>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QtCharts/QChartView>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QtCharts/QLineSeries>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QtCore/QVector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QGroupBox>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}diagram.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }Ui\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_new_window}{NewWindow}};\ \}}
+\DoxyCodeLine{00022\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_new_window}{NewWindow}}:\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_new_window}{NewWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_new_window_a80f25b4006679e287d353ee2f3296915}{\string~NewWindow}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ signals:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ sendSpaceData(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_a5d5f6c7cd75a94987d40dfdfee7c0cc9}{sendTemperatureChartData}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ variable);\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_ad6287849e659dc2f43aad96776b83439}{sendLightChartData}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ variable);\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}\ slots:\ \textcolor{comment}{//BK}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_a3aa1679039c16cabd4fefa10c3e31baa}{receiveSpaceSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_ac88d0330b97b31929b5b8bf5fe5d10ba}{receiveLightSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}{receiveTemperatureSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_window_a5621c0303a72395ca72ecd83dc21d935}{receiveCompassSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ QString\ x);\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_lightButton\_clicked();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ Ui::NewWindow\ *ui;\ }
+\DoxyCodeLine{00065\ \ \ std::vector\ <float>\ floatData;\ }
+\DoxyCodeLine{00066\ \ \ \ QChartView\ *QChartView;}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ setupChart()\{\};\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{double}\ hel\ =\ 0;\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{double}\ hel1\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{bool}\ start\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{bool}\ spacePicStatus\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{bool}\ greenPicStatus\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{int}\ distanceStatus\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \textcolor{keywordtype}{bool}\ startDiagram\ =\ false\ ;}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{double}\ receivedTime=0,\ receivedDistance=2;}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{double}\ sendx\ =0,\ sendy=0;}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{int}\ w\ =0\ ,\ h\ =0;}
+\DoxyCodeLine{00080\ \ \ QPixmap\ pixmapArray[9];\ }
+\DoxyCodeLine{00081\ \ \ QPixmap\ pixmapCompass[4];\ }
+\DoxyCodeLine{00083\ \ \ QStringList\ titles,\ lightTitles,\ distTitles;\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{int}\ flag\ =\ 0;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{int}\ row\ =\ 0,\ lightRow\ =\ 0,\ distRow=0;\ }
+\DoxyCodeLine{00087\ \ \ QString\ timeTemp,\ timeLight,\ timeDist;\ }
+\DoxyCodeLine{00088\ \ \ QString\ temp,\ light,\ dist;\ }
+\DoxyCodeLine{00089\ \ \ QTime\ currentTime,\ currentLightTime,\ currentDistanceTime;}
+\DoxyCodeLine{00090\ \ \ std::vector<QLabel*>\ labelVector;\ }
+\DoxyCodeLine{00091\ \ \ std::vector<QLabel*>\ tempLabelVector;\ }
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NEWWINDOW\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,460 @@
+\hypertarget{class_new_window}{}\doxysection{New\+Window Class Reference}
+\label{class_new_window}\index{NewWindow@{NewWindow}}
+
+
+Klasa reprezentująca nowe okno aplikacji.  
+
+
+
+
+{\ttfamily \#include $<$newwindow.\+h$>$}
+
+Inheritance diagram for New\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_new_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_new_window_a3aa1679039c16cabd4fefa10c3e31baa}{receive\+Space\+Sensor\+Data}} (double t\+Space, double x)
+\begin{DoxyCompactList}\small\item\em Slot reagujący na otrzymanie danych czujnika przestrzeni. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_new_window_ac88d0330b97b31929b5b8bf5fe5d10ba}{receive\+Light\+Sensor\+Data}} (double t\+Space, double x)
+\begin{DoxyCompactList}\small\item\em Slot reagujący na otrzymanie danych czujnika natężenia światła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}{receive\+Temperature\+Sensor\+Data}} (double t\+Space, double y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}{New\+Window\+::receive\+Temperature\+Sensor\+Data}} -- odbiera dane pomiarowe o temperaturze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_new_window_a5621c0303a72395ca72ecd83dc21d935}{receive\+Compass\+Sensor\+Data}} (double t\+Space, QString x)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_new_window_a5621c0303a72395ca72ecd83dc21d935}{New\+Window\+::receive\+Compass\+Sensor\+Data}} -- odbiera dane z magnetometru. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_new_window_aa32426fb547124820c7a74432ba850dd}\label{class_new_window_aa32426fb547124820c7a74432ba850dd}} 
+void {\bfseries send\+Space\+Data} (double x, double y)
+\item 
+void \mbox{\hyperlink{class_new_window_a5d5f6c7cd75a94987d40dfdfee7c0cc9}{send\+Temperature\+Chart\+Data}} (double x, double variable)
+\item 
+void \mbox{\hyperlink{class_new_window_ad6287849e659dc2f43aad96776b83439}{send\+Light\+Chart\+Data}} (double x, double variable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_new_window_ae9cf37a1c14ce9d379c98501ecbd9856}{New\+Window}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_new_window}{New\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_new_window_a80f25b4006679e287d353ee2f3296915}{$\sim$\+New\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \mbox{\hyperlink{class_new_window}{New\+Window}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca nowe okno aplikacji. 
+
+Klasa \mbox{\hyperlink{class_new_window}{New\+Window}} dziedzicząca po klasie QWidget, reprezentuje nowe okno aplikacji. Zawiera deklarację interfejsu użytkownika (UI) oraz prywatne pola i metody. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_new_window_ae9cf37a1c14ce9d379c98501ecbd9856}\label{class_new_window_ae9cf37a1c14ce9d379c98501ecbd9856}} 
+\index{NewWindow@{NewWindow}!NewWindow@{NewWindow}}
+\index{NewWindow@{NewWindow}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{NewWindow()}{NewWindow()}}
+{\footnotesize\ttfamily New\+Window\+::\+New\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{class_new_window}{New\+Window}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt rodzica (domyślnie nullptr)\\
+\hline
+{\em parent} & Wskaźnik na rodzica okna. \\
+\hline
+\end{DoxyParams}
+Ustawienie pixmapy dla ikonki kompasu 
+\begin{DoxyParams}{Parameters}
+{\em pixC} & -- pixmapa z ikonką kompasu \\
+\hline
+{\em label\+Compass} & -- label, któremu przypisujemy pixmapę pixC\\
+\hline
+\end{DoxyParams}
+Ustawienie pixmapy dla ikonki kompasu 
+\begin{DoxyParams}{Parameters}
+{\em pixT} & -- pixmapa z ikonką kompasu \\
+\hline
+{\em label\+Compass} & -- label, któremu przypisujemy pixmapę pixT\\
+\hline
+\end{DoxyParams}
+Ustawienie pixmapy dla stref odległości 
+\begin{DoxyParams}{Parameters}
+{\em pixmap\+Array} & -\/ tablica przechowująca pixmapy dla każdej strefy \\
+\hline
+{\em green\+Pic1} & -\/ przykładowy label, któremu przypisywana jest pixmapa\\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla zielonej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla zielonej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla zielonej strefy
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla żółtej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla żółtej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla żółtej strefy
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla czerwonej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla czerwonej strefy
+
+\texorpdfstring{$<$}{<} Ustawienie pixmapy dla czerwonej strefy
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Domyślne ustawienie widoczności label na false przy pierwszym wyświetleniu okna
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Przypisanie pixmapy do label
+
+\texorpdfstring{$<$}{<} Utworzenie wskaźnika na groupbox z etykietami dotyczącymi natężenia świtała
+
+\texorpdfstring{$<$}{<} Iterowanie po wszystkich dzieciach groupboxa
+
+\texorpdfstring{$<$}{<} Sprawdzanie, czy dziecko jest etykietą QLabel
+
+\texorpdfstring{$<$}{<} Dodanie etykiety do wektora
+
+\texorpdfstring{$<$}{<} Utworzenie wskaźnika na groupbox z etykietami dotyczącymi temperatury
+
+\texorpdfstring{$<$}{<} Iterowanie po wszystkich dzieciach groupboxa
+
+\texorpdfstring{$<$}{<} Sprawdzanie, czy dziecko jest etykietą QLabel
+
+\texorpdfstring{$<$}{<} Dodanie etykiety do wektora\mbox{\Hypertarget{class_new_window_a80f25b4006679e287d353ee2f3296915}\label{class_new_window_a80f25b4006679e287d353ee2f3296915}} 
+\index{NewWindow@{NewWindow}!````~NewWindow@{$\sim$NewWindow}}
+\index{````~NewWindow@{$\sim$NewWindow}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$NewWindow()}{~NewWindow()}}
+{\footnotesize\ttfamily New\+Window\+::$\sim$\+New\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \mbox{\hyperlink{class_new_window}{New\+Window}}. 
+
+Destruktor klasy \mbox{\hyperlink{class_new_window}{New\+Window}}. Zwalnia pamięć zajętą przez interfejs użytkownika. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_new_window_a5621c0303a72395ca72ecd83dc21d935}\label{class_new_window_a5621c0303a72395ca72ecd83dc21d935}} 
+\index{NewWindow@{NewWindow}!receiveCompassSensorData@{receiveCompassSensorData}}
+\index{receiveCompassSensorData@{receiveCompassSensorData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{receiveCompassSensorData}{receiveCompassSensorData}}
+{\footnotesize\ttfamily void New\+Window\+::receive\+Compass\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{QString}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_new_window_a5621c0303a72395ca72ecd83dc21d935}{New\+Window\+::receive\+Compass\+Sensor\+Data}} -- odbiera dane z magnetometru. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Space} & -- czas pomiaru w sekundach \\
+\hline
+{\em x} & -- kierunek wskazany przez kompas \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Ustawienie widzialności strzałki odpowiadającej kierunkowi północnemu
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Ustawienie widzialności strzałki odpowiadającej kierunkowi wschodniemu
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Ustawienie widzialności strzałki odpowiadającej kierunkowi południowemu
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Zanik strzałki sprzecznej ze wskazaniem
+
+\texorpdfstring{$<$}{<} Ustawienie widzialności strzałki odpowiadającej kierunkowi wschodniemu
+
+\texorpdfstring{$<$}{<} Zanik strzałek w przypadku braku wskazań
+
+\texorpdfstring{$<$}{<} Zanik strzałek w przypadku braku wskazań
+
+\texorpdfstring{$<$}{<} Zanik strzałek w przypadku braku wskazań
+
+\texorpdfstring{$<$}{<} Zanik strzałek w przypadku braku wskazań\mbox{\Hypertarget{class_new_window_ac88d0330b97b31929b5b8bf5fe5d10ba}\label{class_new_window_ac88d0330b97b31929b5b8bf5fe5d10ba}} 
+\index{NewWindow@{NewWindow}!receiveLightSensorData@{receiveLightSensorData}}
+\index{receiveLightSensorData@{receiveLightSensorData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{receiveLightSensorData}{receiveLightSensorData}}
+{\footnotesize\ttfamily void New\+Window\+::receive\+Light\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot reagujący na otrzymanie danych czujnika natężenia światła. 
+
+Slot do odbioru danych z czujnika światła
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Space} & Wartość czasu. \\
+\hline
+{\em x} & Wartość pomiarowa. \\
+\hline
+{\em hel} & -- wartość wprowadzona do doubleboxa \\
+\hline
+\end{DoxyParams}
+przypisanie zmiennej j wartości hel
+
+Ustawienie koloru \#1a1a1a okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#3c3c3c okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#616161 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#787878 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#b4b4b4 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#f0f0f0 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#f9f9f9 okna pomiarowego, zgodnie z przyjętą skalą
+
+Przesył danych o natężeniu światła do wykresu
+
+Ustawienie liczby kolumn w tabeli
+
+Dodanie tytułów kolumn do listy
+
+Dodanie tytułów kolumn do tabeli
+
+Pobranie numeru następnego wiersza
+
+Konwersja wartości temperatury do string
+
+Pobranie czasu pomiaru
+
+Konwersja czasu pomiaru do string
+
+Dodanie kolejnego wiersza do Tabeli
+
+Zapis wartości czasu pomiaru do tabeli
+
+Zapis wartości temperatury do tabeli\mbox{\Hypertarget{class_new_window_a3aa1679039c16cabd4fefa10c3e31baa}\label{class_new_window_a3aa1679039c16cabd4fefa10c3e31baa}} 
+\index{NewWindow@{NewWindow}!receiveSpaceSensorData@{receiveSpaceSensorData}}
+\index{receiveSpaceSensorData@{receiveSpaceSensorData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{receiveSpaceSensorData}{receiveSpaceSensorData}}
+{\footnotesize\ttfamily void New\+Window\+::receive\+Space\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot reagujący na otrzymanie danych czujnika przestrzeni. 
+
+Slot do odbioru danych z czujnika odległości
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Space} & Wartość czasu. \\
+\hline
+{\em x} & Wartość współrzędnej x. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy żółtej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy żółtej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy żółtej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}10
+
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Schowanie strefy zielonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$<$}{<}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy zielonej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy zielonej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy zielonej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy żółtej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$>$}{>}20
+
+\texorpdfstring{$<$}{<} Wyświetlenie strefy czerwonej dla x\texorpdfstring{$>$}{>}20
+
+Ustawienie liczby kolumn w tabeli
+
+Dodanie tytułów kolumn do listy
+
+Dodanie tytułów kolumn do tabeli
+
+Pobranie numeru następnego wiersza
+
+Konwersja wartości temperatury do string
+
+Pobranie czasu pomiaru
+
+Konwersja czasu pomiaru do string
+
+Dodanie kolejnego wiersza do Tabeli
+
+Zapis wartości czasu pomiaru do tabeli
+
+Zapis wartości temperatury do tabeli\mbox{\Hypertarget{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}\label{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}} 
+\index{NewWindow@{NewWindow}!receiveTemperatureSensorData@{receiveTemperatureSensorData}}
+\index{receiveTemperatureSensorData@{receiveTemperatureSensorData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{receiveTemperatureSensorData}{receiveTemperatureSensorData}}
+{\footnotesize\ttfamily void New\+Window\+::receive\+Temperature\+Sensor\+Data (\begin{DoxyParamCaption}\item[{double}]{t\+Space,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_new_window_a7c46e07f6036192fb613d07e890ab5e3}{New\+Window\+::receive\+Temperature\+Sensor\+Data}} -- odbiera dane pomiarowe o temperaturze. 
+
+Slot do odbioru danych z czujnika temperatury
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+Space} & -- czas pomiaru w sekundach \\
+\hline
+{\em y} & -- wartość zmierzona \\
+\hline
+\end{DoxyParams}
+Ustawienie koloru \#66e0ff okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ccf5ff okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#e6ffe6 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#aaff80 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#77ff33 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ffff4d okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ffff00 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ff9933 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ff8000c okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ff471a okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie koloru \#ff3300 okna pomiarowego, zgodnie z przyjętą skalą
+
+Ustawienie liczby kolumn w tabeli
+
+Dodanie tytułów kolumn do listy
+
+Dodanie tytułów kolumn do tabeli
+
+Pobranie numeru następnego wiersza
+
+Konwersja wartości temperatury do string
+
+Pobranie czasu pomiaru
+
+Konwersja czasu pomiaru do string
+
+Dodanie kolejnego wiersza do Tabeli
+
+Zapis wartości czasu pomiaru do tabeli
+
+Zapis wartości temperatury do tabeli\mbox{\Hypertarget{class_new_window_ad6287849e659dc2f43aad96776b83439}\label{class_new_window_ad6287849e659dc2f43aad96776b83439}} 
+\index{NewWindow@{NewWindow}!sendLightChartData@{sendLightChartData}}
+\index{sendLightChartData@{sendLightChartData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{sendLightChartData}{sendLightChartData}}
+{\footnotesize\ttfamily void New\+Window\+::send\+Light\+Chart\+Data (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{variable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych do wykresu natężenia światła \mbox{\Hypertarget{class_new_window_a5d5f6c7cd75a94987d40dfdfee7c0cc9}\label{class_new_window_a5d5f6c7cd75a94987d40dfdfee7c0cc9}} 
+\index{NewWindow@{NewWindow}!sendTemperatureChartData@{sendTemperatureChartData}}
+\index{sendTemperatureChartData@{sendTemperatureChartData}!NewWindow@{NewWindow}}
+\doxysubsubsection{\texorpdfstring{sendTemperatureChartData}{sendTemperatureChartData}}
+{\footnotesize\ttfamily void New\+Window\+::send\+Temperature\+Chart\+Data (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{variable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Sygnał do emisji danych do wykresu pomiaru temperatury 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+newwindow.\+h\item 
+newwindow.\+cpp\end{DoxyCompactItemize}

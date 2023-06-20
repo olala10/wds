@@ -1,0 +1,204 @@
+\hypertarget{class_diagram}{}\doxysection{Diagram Class Reference}
+\label{class_diagram}\index{Diagram@{Diagram}}
+
+
+Klasa reprezentująca nowe okno wykresów aplikacji.  
+
+
+
+
+{\ttfamily \#include $<$diagram.\+h$>$}
+
+Inheritance diagram for Diagram\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_diagram}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}{receive\+Temperature\+Chart\+Data}} (double t, double y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}{Diagram\+::receive\+Temperature\+Chart\+Data}} -- odbiera dane o temperaturze. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_a691cc8432dbd0e246ff017871c1942f2}{receive\+Light\+Chart\+Data}} (double t, double y)
+\begin{DoxyCompactList}\small\item\em receive\+Light\+Chart\+Data -- odbiera dane o rozkładzie natężenia światła \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diagram_a2c5722d38c84fae035845132febe6289}{Diagram}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_diagram}{Diagram}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_diagram_ab91100b12241a3b33886121bcb664524}{$\sim$\+Diagram}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \mbox{\hyperlink{class_diagram}{Diagram}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_a80993ce985bb2a61afd80bf01f9cba20}{add\+Point}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Definicja metody add\+Point -- dodaje wartości pomiarowe do wektora wartości temperatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}{add\+Light\+Point}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}{Diagram\+::add\+Light\+Point}} -- dodaje wartości pomiarowe do wektora wartości pomiaru światła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_af3becba96c9a867394ba88391c86ffd3}{clear\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Definicja metody clear\+Data Usuwanie wartości z wykresu temperatury. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_diagram_ab4575dedbbdf5db9e0ce13d0ccf3d4f4}\label{class_diagram_ab4575dedbbdf5db9e0ce13d0ccf3d4f4}} 
+void {\bfseries clear\+Light\+Data} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_diagram_ab4575dedbbdf5db9e0ce13d0ccf3d4f4}{Diagram\+::clear\+Light\+Data}} Usuwanie wartości z wykresu natężenia światła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_a5c61cef2972ec751e44d96ba5f01f862}{plot}} ()
+\begin{DoxyCompactList}\small\item\em Definicja metody plot Rysowanie wykresu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_diagram_abc674f74960bcaee4540ffa28f29bc20}{plot\+Light}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca nowe okno wykresów aplikacji. 
+
+Klasa \mbox{\hyperlink{class_diagram}{Diagram}} dziedzicząca po klasie QDialog, reprezentuje nowe okno aplikacji. Zawiera deklarację interfejsu użytkownika (UI) oraz prywatne pola i metody. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_diagram_a2c5722d38c84fae035845132febe6289}\label{class_diagram_a2c5722d38c84fae035845132febe6289}} 
+\index{Diagram@{Diagram}!Diagram@{Diagram}}
+\index{Diagram@{Diagram}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{Diagram()}{Diagram()}}
+{\footnotesize\ttfamily Diagram\+::\+Diagram (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \mbox{\hyperlink{class_diagram}{Diagram}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt rodzica (domyślnie nullptr)\\
+\hline
+{\em parent} & Wskaźnik na rodzica okna. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_diagram_ab91100b12241a3b33886121bcb664524}\label{class_diagram_ab91100b12241a3b33886121bcb664524}} 
+\index{Diagram@{Diagram}!````~Diagram@{$\sim$Diagram}}
+\index{````~Diagram@{$\sim$Diagram}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{$\sim$Diagram()}{~Diagram()}}
+{\footnotesize\ttfamily Diagram\+::$\sim$\+Diagram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \mbox{\hyperlink{class_diagram}{Diagram}}. 
+
+Destruktor klasy \mbox{\hyperlink{class_diagram}{Diagram}}. Zwalnia pamięć zajętą przez interfejs użytkownika. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}\label{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}} 
+\index{Diagram@{Diagram}!addLightPoint@{addLightPoint}}
+\index{addLightPoint@{addLightPoint}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{addLightPoint()}{addLightPoint()}}
+{\footnotesize\ttfamily void Diagram\+::add\+Light\+Point (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_diagram_a15b9439714854b7d4b8df4e9a61aa9a0}{Diagram\+::add\+Light\+Point}} -- dodaje wartości pomiarowe do wektora wartości pomiaru światła. 
+
+Funkcja dodająca wartości pomiaru światła do wektora
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -- czas pomiaru \\
+\hline
+{\em y} & -- wartość natężenia światła \\
+\hline
+\end{DoxyParams}
+dodawanie do wektora czasu
+
+dodawanie do wektora natężenia światła\mbox{\Hypertarget{class_diagram_a80993ce985bb2a61afd80bf01f9cba20}\label{class_diagram_a80993ce985bb2a61afd80bf01f9cba20}} 
+\index{Diagram@{Diagram}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}}
+{\footnotesize\ttfamily void Diagram\+::add\+Point (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+
+
+Definicja metody add\+Point -- dodaje wartości pomiarowe do wektora wartości temperatury. 
+
+Funkcja dodająca wartości pomiaru temperatury do wektora
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & -- czas pomiaru \\
+\hline
+{\em y} & -- wartość temperatury \\
+\hline
+\end{DoxyParams}
+dodawanie do wektora czasu
+
+dodawanie do wektora temperatury\mbox{\Hypertarget{class_diagram_af3becba96c9a867394ba88391c86ffd3}\label{class_diagram_af3becba96c9a867394ba88391c86ffd3}} 
+\index{Diagram@{Diagram}!clearData@{clearData}}
+\index{clearData@{clearData}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily void Diagram\+::clear\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definicja metody clear\+Data Usuwanie wartości z wykresu temperatury. 
+
+Usuwanie wartości z diagramu\mbox{\Hypertarget{class_diagram_a5c61cef2972ec751e44d96ba5f01f862}\label{class_diagram_a5c61cef2972ec751e44d96ba5f01f862}} 
+\index{Diagram@{Diagram}!plot@{plot}}
+\index{plot@{plot}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily void Diagram\+::plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definicja metody plot Rysowanie wykresu. 
+
+Usuwanie wartości z diagramu natężenia światła Rysowanie wykresu \texorpdfstring{$<$}{<} Ustawianie danych do wykresu
+
+\texorpdfstring{$<$}{<} Automatyczne skalowanie wykresu
+
+\texorpdfstring{$<$}{<} Dorysowywanie elementów
+
+\texorpdfstring{$<$}{<} Aktualizowanie wykresu\mbox{\Hypertarget{class_diagram_abc674f74960bcaee4540ffa28f29bc20}\label{class_diagram_abc674f74960bcaee4540ffa28f29bc20}} 
+\index{Diagram@{Diagram}!plotLight@{plotLight}}
+\index{plotLight@{plotLight}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{plotLight()}{plotLight()}}
+{\footnotesize\ttfamily void Diagram\+::plot\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ustawianie danych do wykresu
+
+Automatyczne skalowanie wykresu
+
+Dodawanie elementów
+
+Aktualizowanie wykresu\mbox{\Hypertarget{class_diagram_a691cc8432dbd0e246ff017871c1942f2}\label{class_diagram_a691cc8432dbd0e246ff017871c1942f2}} 
+\index{Diagram@{Diagram}!receiveLightChartData@{receiveLightChartData}}
+\index{receiveLightChartData@{receiveLightChartData}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{receiveLightChartData}{receiveLightChartData}}
+{\footnotesize\ttfamily void Diagram\+::receive\+Light\+Chart\+Data (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+receive\+Light\+Chart\+Data -- odbiera dane o rozkładzie natężenia światła 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -- czas zebrania pomiaru \\
+\hline
+{\em y} & -- wartość zmierzona \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}\label{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}} 
+\index{Diagram@{Diagram}!receiveTemperatureChartData@{receiveTemperatureChartData}}
+\index{receiveTemperatureChartData@{receiveTemperatureChartData}!Diagram@{Diagram}}
+\doxysubsubsection{\texorpdfstring{receiveTemperatureChartData}{receiveTemperatureChartData}}
+{\footnotesize\ttfamily void Diagram\+::receive\+Temperature\+Chart\+Data (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_diagram_ab4a5538babe6ad7dd8439dea4b69814b}{Diagram\+::receive\+Temperature\+Chart\+Data}} -- odbiera dane o temperaturze. 
+
+Rysowanie wykresu natężenia światła Slot odczytu danych o temperaturze do wykresu
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & -- czas zebrania pomiaru \\
+\hline
+{\em y} & -- wartość zmierzona \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diagram.\+h\item 
+diagram.\+cpp\end{DoxyCompactItemize}

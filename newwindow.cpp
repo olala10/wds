@@ -191,7 +191,7 @@ void NewWindow::receiveSpaceSensorData(double tSpace, double x)
   qDebug()<<"Status: "<<distanceStatus<<'\n';
   }
   ui->tableWidgetDistance->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
-  distTitles << "czas [s]" << "Odległość [cm]"; /** Dodanie tytułów kolumn do listy */
+  distTitles << tr("czas [s]") << tr("Odległość [cm]"); /** Dodanie tytułów kolumn do listy */
   ui->tableWidgetDistance->setHorizontalHeaderLabels(distTitles); /** Dodanie tytułów kolumn do tabeli */
   distRow = ui->tableWidgetDistance->rowCount(); /** Pobranie numeru następnego wiersza */
 
@@ -246,7 +246,7 @@ emit sendLightChartData(tSpace, x); /** Przesył danych o natężeniu światła 
 
 
     ui->tableWidgetLight->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
-    lightTitles << "czas [s]" << "Światło [lux]"; /** Dodanie tytułów kolumn do listy */
+    lightTitles << tr("czas [s]") << tr("Światło [lux]"); /** Dodanie tytułów kolumn do listy */
     ui->tableWidgetLight->setHorizontalHeaderLabels(lightTitles); /** Dodanie tytułów kolumn do tabeli */
     lightRow = ui->tableWidgetLight->rowCount(); /** Pobranie numeru następnego wiersza */
 
@@ -285,8 +285,8 @@ void NewWindow::on_lightButton_clicked()
 
           // Ustaw ikonę, tytuł i treść wiadomości
           msgBox.setIcon(QMessageBox::Critical); /** Ustawienie ikony krytycznej okna dialogowego */
-          msgBox.setWindowTitle("Błąd"); /** Ustawienie tytułu okna dialogowego*/
-          msgBox.setText("Wartość niedozwolona!"); /** Ustawienie treści okna dialogowego*/
+          msgBox.setWindowTitle(tr("Błąd")); /** Ustawienie tytułu okna dialogowego*/
+          msgBox.setText(tr("Wartość niedozwolona!")); /** Ustawienie treści okna dialogowego*/
           msgBox.exec(); /** Wywołanie okna dialogowego */
           hel = 0; /** Nadanie zmiennej przechowującej dane użytkownika wartości zerowej */
     }
@@ -353,7 +353,7 @@ void NewWindow::receiveTemperatureSensorData(double tSpace, double y)
 
 
     ui->tableWidget->setColumnCount(2); /** Ustawienie liczby kolumn w tabeli */
-    titles << "czas [s]" << "temperatura [°C]"; /** Dodanie tytułów kolumn do listy */
+    titles <<tr( "czas [s]" )<< tr("temperatura [°C]"); /** Dodanie tytułów kolumn do listy */
     ui->tableWidget->setHorizontalHeaderLabels(titles); /** Dodanie tytułów kolumn do tabeli */
     row = ui->tableWidget->rowCount(); /** Pobranie numeru następnego wiersza */
 

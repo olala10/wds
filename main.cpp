@@ -24,11 +24,30 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);///< Inicjalizacja obiektu QApplication
+    QTranslator translation;  ///< Utworzenie obiektu tłumaczeń
+    QStringList languages;
+    languages<<"Polish"<<"English";
+
+
+
+
+    QString language = QInputDialog::getItem(NULL, "Select language ",
+                                             "Language", languages);
+
+
+    if (language == "English"){
+        translation.load(":/english.qm");
+         a.installTranslator(&translation);
+
+    }
+    else if(language != "Polish"){
+        a.installTranslator(&translation);
+    }
+
     MainWindow mainWindow;///< Utworzenie obiektu klasy MainWindow.
     NewWindow newWindow;  ///< Utworzenie obiektu klasy NewWindow.
-
-
     Diagram diagram;
+
     QObject::connect(&mainWindow, SIGNAL(sendSpaceSensorData(double,double)), &newWindow, SLOT(receiveSpaceSensorData(double,double)));
     ///< Połączenie przesyłu danych dla pomiaru odległości
 

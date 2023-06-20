@@ -19,6 +19,8 @@
 #include "diagram.h"
 #include <vector>
 #include<QMessageBox>
+#include <QTranslator>
+#include <QInputDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

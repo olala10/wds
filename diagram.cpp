@@ -15,16 +15,16 @@ Diagram::Diagram(QWidget *parent) :
     ui->plot->addGraph();
     ui->plot->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
     ui->plot->graph(0)->setLineStyle(QCPGraph::lsNone);
-    ui->plot->xAxis->setLabel("Czas[s]");
-    ui->plot->yAxis->setLabel("Pomiar");
+    ui->plot->xAxis->setLabel(tr("Czas[s]"));
+    ui->plot->yAxis->setLabel(tr("Pomiar"));
 //    ui->plot->setBackground(QBrush(QColor(255, 255, 255, 0.5)));
 
 
     ui->plot_light->addGraph();
     ui->plot_light->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
     ui->plot_light->graph(0)->setLineStyle(QCPGraph::lsNone);
-    ui->plot_light->xAxis->setLabel("Czas[s]");
-    ui->plot_light->yAxis->setLabel("Pomiar");
+    ui->plot_light->xAxis->setLabel(tr("Czas[s]"));
+    ui->plot_light->yAxis->setLabel(tr("Pomiar"));
 
 
 }
