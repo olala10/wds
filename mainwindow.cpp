@@ -232,8 +232,8 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
     QByteArray data;
     while (_Start) {
-//        data = this->device->readAll();  //DO ZMIANY!!!!!!
-        data =  SimulateReceiver();
+        data = this->device->readAll();
+//        data =  SimulateReceiver();
 
         if (!data.isEmpty()) {
             QString strData = QString::fromUtf8(data); /**< Tworzenie zmiennej QString do odczytu danych */
@@ -246,13 +246,10 @@ void MainWindow::on_pushButtonRead_toggled(bool Checked)
 
                     QStringList values = strData.split('#');
                     if (values.size() >= 6) {
-                        distance = values[2].trimmed().toDouble();
-                        light = values[3].trimmed().toDouble();
-                        compassDirection = values[4].trimmed();
-                        temperature = values[5].trimmed().toDouble();
-
-
-
+                        distance = values[1].trimmed().toDouble();
+                        light = values[2].trimmed().toDouble();
+                        compassDirection = values[3].trimmed();
+                        temperature = values[4].trimmed().toDouble();
                         emit sendSpaceSensorData(secTimer, distance);
                         emit sendLightSensorData(secTimer, light);
                         emit sendCompasSensorData(secTimer, compassDirection);

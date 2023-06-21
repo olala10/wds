@@ -22,70 +22,72 @@
 \DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}diagram.h"{}}}
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include<QMessageBox>}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ QT\_BEGIN\_NAMESPACE}
-\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }Ui\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};\ \}}
-\DoxyCodeLine{00025\ QT\_END\_NAMESPACE}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ DATAVECTOR\_H}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DATAVECTOR\_H}}
-\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
-\DoxyCodeLine{00035\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNewWindow(\mbox{\hyperlink{class_new_window}{NewWindow}}\ *pWin)\ \{\ newWindow\ =\ pWin;\ \}\ \textcolor{comment}{//\ BK}}
-\DoxyCodeLine{00055\ signals:}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab62e61a8d803001b2561b514e1b49485}{openDevice}}();\ \ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a622a62146268334b99742f18b9060460}{closeDevice}}();\ \ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a26dea8ac06aa405f449398642b1d4183}{sendData}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ variable);\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae8b76c5224d95125322a413fb0bbbbb0}{sendSpaceSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae244b3172c794492ea790f797d4f6af3}{sendLightSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aabcf292cc135f8e8691746c2e6d0cab3}{sendCompasSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ QString\ x);\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab11e339d21ff525da59a71e4e44ee2cd}{sendTemperatureSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ y);\ }
-\DoxyCodeLine{00068\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonSearch\_clicked();}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonConnect\_clicked();}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ readFromPort();}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonDisconnect\_clicked();}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClear\_clicked();}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonRead\_toggled(\textcolor{keywordtype}{bool}\ Checked);}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QTranslator>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QInputDialog>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }Ui\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};\ \}}
+\DoxyCodeLine{00027\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ DATAVECTOR\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ DATAVECTOR\_H}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ SetNewWindow(\mbox{\hyperlink{class_new_window}{NewWindow}}\ *pWin)\ \{\ newWindow\ =\ pWin;\ \}\ \textcolor{comment}{//\ BK}}
+\DoxyCodeLine{00057\ signals:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab62e61a8d803001b2561b514e1b49485}{openDevice}}();\ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a622a62146268334b99742f18b9060460}{closeDevice}}();\ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a26dea8ac06aa405f449398642b1d4183}{sendData}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ variable);\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae8b76c5224d95125322a413fb0bbbbb0}{sendSpaceSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae244b3172c794492ea790f797d4f6af3}{sendLightSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ x);\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aabcf292cc135f8e8691746c2e6d0cab3}{sendCompasSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ QString\ x);\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab11e339d21ff525da59a71e4e44ee2cd}{sendTemperatureSensorData}}(\textcolor{keywordtype}{double}\ tSpace,\ \textcolor{keywordtype}{double}\ y);\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonSearch\_clicked();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonConnect\_clicked();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ readFromPort();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonDisconnect\_clicked();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClear\_clicked();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonRead\_toggled(\textcolor{keywordtype}{bool}\ Checked);}
 \DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_clicked();}
+\DoxyCodeLine{00100\ }
 \DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClearMonitor\_clicked();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_clicked();}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_\_pButton\_Test\_toggled(\textcolor{keywordtype}{bool}\ State);\ \textcolor{comment}{//\ BK}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonClearMonitor\_clicked();}
+\DoxyCodeLine{00105\ }
 \DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00108\ \ \ \ \ Ui::MainWindow\ *ui;}
-\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ \ QChartView\ *QChartView;}}
-\DoxyCodeLine{00110\ \ \textcolor{comment}{//\ \ \ void\ setupChart()\{\};\ //\ prywatna\ metoda\ do\ ustawienia\ wykresu}}
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ addToLogs(QString\ message);}
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ addToRead(QString\ message);}
-\DoxyCodeLine{00119\ \ \ \ \ QSerialPort\ *device;}
-\DoxyCodeLine{00120\ \ \ \ \ QThread*\ thread;}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_new_window}{NewWindow}}\ *newWindow;}
-\DoxyCodeLine{00122\ \ \ \ \textcolor{comment}{//\ Diagram\ *diagram;}}
-\DoxyCodeLine{00123\ \ \ \ \ QVector<QString>\ dataVector;\ }
-\DoxyCodeLine{00124\ \ \ \ \ std::vector\ <float>\ lineData;\ }
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \_Start\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{double}\ secTimer\ =\ 0;\ \textcolor{comment}{//\ do\ odliczania\ -\/\ poprawić\ to}}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =0\ ;}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ light\ =\ 0;}
-\DoxyCodeLine{00129\ \ \ \ \ QString\ compass,\ compassDirection;}
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\ =\ 0;}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00132\ \};}
-\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATAVECTOR\_H}}
-\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_\_pButton\_Test\_toggled(\textcolor{keywordtype}{bool}\ State);\ \textcolor{comment}{//\ BK}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ \ QChartView\ *QChartView;}}
+\DoxyCodeLine{00112\ \ \textcolor{comment}{//\ \ \ void\ setupChart()\{\};\ //\ prywatna\ metoda\ do\ ustawienia\ wykresu}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ addToLogs(QString\ message);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ addToRead(QString\ message);}
+\DoxyCodeLine{00121\ \ \ \ \ QSerialPort\ *device;}
+\DoxyCodeLine{00122\ \ \ \ \ QThread*\ thread;}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_new_window}{NewWindow}}\ *newWindow;}
+\DoxyCodeLine{00124\ \ \ \ \textcolor{comment}{//\ Diagram\ *diagram;}}
+\DoxyCodeLine{00125\ \ \ \ \ QVector<QString>\ dataVector;\ }
+\DoxyCodeLine{00126\ \ \ \ \ std::vector\ <float>\ lineData;\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \_Start\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ secTimer\ =\ 0;\ \textcolor{comment}{//\ do\ odliczania\ -\/\ poprawić\ to}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =0\ ;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{double}\ light\ =\ 0;}
+\DoxyCodeLine{00131\ \ \ \ \ QString\ compass,\ compassDirection;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\ =\ 0;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATAVECTOR\_H}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
 
 \end{DoxyCode}
